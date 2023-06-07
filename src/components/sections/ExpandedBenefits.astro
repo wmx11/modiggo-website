@@ -1,0 +1,96 @@
+---
+import styles from '../../utils/styles';
+import AccentBlur from '../AccentBlur.astro';
+import Container from '../Container.astro';
+import Pattern from '../Pattern.astro';
+import TextBlock from '../TextBlock.astro';
+
+const benefits = [
+  {
+    icon: '+',
+    title: 'Pause or Cancel Anytime',
+    description:
+      "Don't have enough work for us? Pause and use the remainder anytime you have more work coming in.",
+  },
+  {
+    icon: '+',
+    title: 'Fixed Rates',
+    description: 'Easy and predictable rates without surprises.',
+  },
+  {
+    icon: '+',
+    title: 'Flexible & Scalable',
+    description:
+      'Scale the services up and down as needed. Pause or cancel anytime.',
+  },
+  {
+    icon: '+',
+    title: 'High-Quality work',
+    description: 'We take pride in our craft and deliver high-quality work.',
+  },
+  {
+    icon: '+',
+    title: 'Priority Support',
+    description: 'Receive priority support as a partner.',
+  },
+  {
+    icon: '+',
+    title: 'Consulting',
+    description:
+      'Schedule consultation calls & receive industry expert opinion. Each partnership plan comes with a few hours of free calls (valued at $70/hr).',
+  },
+  {
+    icon: '+',
+    title: 'Free Websites*',
+    description:
+      "Don't have the budget? Enroll in our 'Forge' programme and we will develop a free website just for You. Totally free.",
+  },
+  {
+    icon: '+',
+    title: 'Customer Oriented',
+    description:
+      'You are not JUST a customer. We treat our customers as partners. Honesty, integrity, & expertise straight from the digital blacksmith.',
+  },
+  {
+    icon: '+',
+    title: 'Refinement',
+    description:
+      "Quality is important. We will refine our deliverables until you're happy with the results. Additionally, we take great care in delivering performant applications.",
+  },
+];
+---
+
+<script>
+  import { animate, stagger, inView } from 'motion';
+  inView('.bzz', (info) => {
+    animate(
+      '.test',
+      { opacity: [0, 1], transform: ['translateY(0px)', 'translateY(10px)'] },
+      { duration: 1, delay: stagger(0.1) }
+    );
+  });
+</script>
+
+<section
+  class={`${styles.section} min-h-screen bg-black relative overflow-hidden`}
+>
+  <Container>
+    <div class="text-white mb-16 relative z-10">
+      <h1 class="text-5xl font-bold mb-5">We Take Pride in Our Craft</h1>
+      <h2 class="mb-5 text-2xl">
+        We forge sleek designs and temper robust functionalities. Your websites
+        and applications will be infused with the perfect balance of style and
+        substance.
+      </h2>
+    </div>
+    <div class="flex flex-wrap justify-between gap-16 text-white bzz">
+      {
+        benefits?.map((item) => (
+          <TextBlock className="md:basis-[calc(33.3%-64px)] test" {...item} />
+        ))
+      }
+    </div>
+  </Container>
+  <AccentBlur />
+  <Pattern />
+</section>

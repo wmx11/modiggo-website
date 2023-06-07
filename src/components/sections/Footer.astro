@@ -1,5 +1,10 @@
-<footer class="p-10 bg-black text-white min-h-[420px]">
-  <div class="footer container mx-auto w-full">
+---
+import Container from '../Container.astro';
+import Pattern from '../Pattern.astro';
+---
+
+<footer class="p-10 bg-black text-white min-h-[420px] relative">
+  <Container className="footer z-10 relative">
     <div>
       <span class="footer-title">Services</span>
       <a class="link link-hover">Branding</a>
@@ -32,11 +37,10 @@
             placeholder="username@site.com"
             class="input input-bordered"
           />
-          <button class="btn btn-primary"
-            >Subscribe</button
-          >
+          <button class="btn btn-primary">Subscribe</button>
         </div>
       </div>
     </div>
-  </div>
+  </Container>
+  <Pattern />
 </footer>

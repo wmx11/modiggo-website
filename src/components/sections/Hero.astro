@@ -1,17 +1,49 @@
-<div
-  class="hero min-h-screen"
-  style="background-image: url(/images/stock/photo-1507358522600-9f71e620c44e.jpg);"
->
-  <div class="hero-overlay bg-opacity-60"></div>
-  <div class="hero-content text-neutral-content">
-    <div class="">
-      <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
-      <p class="mb-5">
-        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-        excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a
-        id nisi.
-      </p>
-      <button class="btn btn-primary">Get Started</button>
-    </div>
+---
+import HeroBackground from '../../assets/images/hero_background.png';
+import config from '../../utils/config';
+import AccentBlur from '../AccentBlur.astro';
+import Container from '../Container.astro';
+---
+
+<script>
+  import { animate, inView, stagger } from 'motion';
+
+  inView('#hero', () => {
+    animate(
+      '#hero h1, #hero h2, #hero .btn',
+      {
+        opacity: [0, 1],
+        transform: ['translateY(10px) rotate(1deg)', 'translateY(0px)'],
+      },
+      { duration: 2, delay: stagger(0.2) }
+    );
+  });
+</script>
+
+<section id="hero">
+  <div
+    class="bg-primary min-h-screen relative overflow-hidden flex items-center justify-center"
+  >
+    <Container className="text-white z-10">
+      <div>
+        <h1 class="mb-5 text-8xl font-black animated">
+          Your Digital Blacksmith
+        </h1>
+        <h2 class="mb-5 text-2xl animated">
+          Subscription-Based Web Development Services to Scale Your Business.
+          Let's Hammer Out Those Red-Hot Ideas.
+        </h2>
+        <button
+          class="btn btn-neutral btn-lg animated"
+          data-handler={config.handlers.goToPlans}>See Plans</button
+        >
+      </div>
+    </Container>
+    <img
+      src={HeroBackground}
+      alt="Digital Blacksmith working in his shop"
+      class="absolute w-full h-full inset-0 object-cover opacity-30 scale-x-[-1]"
+    />
+    <AccentBlur />
   </div>
-</div>
+</section>

@@ -1,3 +1,92 @@
-<section class="py-10">
-  <div class="container mx-auto"></div>
+---
+import { Icon } from 'astro-icon';
+import Container from '../Container.astro';
+import AccentBlur from '../AccentBlur.astro';
+import Pattern from '../Pattern.astro';
+import styles from '../../utils/styles';
+
+const services = [
+  'Web Development',
+  'Web3 Development',
+  'Web Design',
+  'Free Websites*',
+  'Landing Pages',
+  'Static Pages',
+  'Sales Pages',
+  'Newsletter Development',
+  'Blog Development',
+  'SaaS Development',
+  'Integrations',
+  'Consulting',
+  'Automation',
+  'Branding',
+  'Web Hosting',
+  'Database Hosting',
+  'Page Speed Optimization',
+  'Social Media Marketing',
+  'Support & Maintenance',
+  'Search Engine Optimization',
+];
+---
+
+<section class={styles.section}>
+  <Container>
+    <div class="text-black mb-16">
+      <h1 class="text-5xl font-bold mb-5">Scope of Work</h1>
+      <h2 class="mb-5 text-2xl">Lorem ipsum dolore.</h2>
+    </div>
+    <div>
+      <div
+        class="card bg-[url('shop_background.png')] bg-fixed bg-no-repeat bg-cover bg-center h-[320px] mb-16 relative overflow-hidden"
+      >
+        <Pattern />
+        <AccentBlur />
+      </div>
+      <div class="flex flex-col md:flex-row flex-wrap gap-8 md:gap-16">
+        <div class="flex-1">
+          <h2 class="text-3xl mb-5 font-bold">Overview</h2>
+          <p class="text-lg mb-5">
+            Since 1984, Flowbite has been serving up grab-and-go frozen
+            daiquiris from its stores across the U.S. Its signature drinks,
+            souvenir cups, and discounted refills have made Flowbite synonymous
+            with great music, good vibes, and starting the best party in town.
+          </p>
+          <div class="md:columns-2 lg:columns-3">
+            <ul class="[&>li]:mb-4">
+              {
+                services?.map((item) => (
+                  <li class="flex gap-2 items-center">
+                    <Icon name="gg:check-o" class="w-[16px] text-primary" />
+                    {item}
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+        <div class="flex-1">
+          <div>
+            <h2 class="text-3xl mb-5 font-bold">Background</h2>
+            <p class="text-lg mb-5">
+              Since 1984, Flowbite has been serving up grab-and-go frozen
+              daiquiris from its stores across the U.S. Its signature drinks,
+              souvenir cups, and discounted refills have made Flowbite
+              synonymous with great music, good vibes, and starting the best
+              party in town.
+            </p>
+          </div>
+          <div>
+            <h2 class="text-3xl mb-5 font-bold">Challenges</h2>
+            <p class="text-lg mb-5">
+              Since 1984, Flowbite has been serving up grab-and-go frozen
+              daiquiris from its stores across the U.S. Its signature drinks,
+              souvenir cups, and discounted refills have made Flowbite
+              synonymous with great music, good vibes, and starting the best
+              party in town.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
 </section>

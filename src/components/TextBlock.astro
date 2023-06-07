@@ -1,0 +1,18 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  icon?: string;
+  className?: string;
+}
+
+const { title, description, icon, className } = Astro.props;
+---
+
+<div class={`${className} z-10`}>
+  <div>{icon}</div>
+  <div class="text-2xl font-bold mb-2">{title}</div>
+  <div class="text-xl">
+    {description}
+  </div>
+</div>
