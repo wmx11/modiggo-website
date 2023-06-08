@@ -8,8 +8,16 @@ const faq = [
   { question: 'Who are the developers?', answer: 'Test' },
   {
     question: 'What tech stack are you using?',
-    answer:
-      'We mainly do our work with HTML, CSS, & JavaScript/TypeScript. We may use different frameworks for differenet requests. Our main framework stack is Astro (Simple websites), NextJS (Single page applications), TailwindCSS, DaisyUI (Tailwind based components), MantineUI (React Components), KeystoneJS (CMS and backend), Ghost (CMS, Blog, Newsletter, Paid Subscriptions/Memberships). We use Nginx proxy and Digital Ocean for hosting, managed databases, & VPS. You can also request Web3 related work - we use Solidity for smart contracts, ThirdWeb, Web3JS, EtherJS, and NextJS for dApps.',
+    answer: `We mainly do our work with HTML, CSS, & JavaScript/TypeScript.
+      <br/>
+      We may use different frameworks for differenet requests. 
+      <br/>
+      Our main framework stack is Astro (Simple websites), NextJS (Single page applications), TailwindCSS, DaisyUI (Tailwind based components), MantineUI (React Components), KeystoneJS (CMS and backend), Ghost (CMS, Blog, Newsletter, Paid Subscriptions/Memberships). 
+      <br/>
+      We use Nginx proxy and Digital Ocean for hosting, managed databases, & VPS. 
+      <br/>
+      <br/> 
+      You can also request Web3 related work - we use Solidity for smart contracts, ThirdWeb, Web3JS, EtherJS, and NextJS for dApps.`,
   },
   { question: 'Do you offer additional services?', answer: 'Test' },
   { question: 'How do I request features or changes?', answer: 'Test' },
@@ -40,7 +48,7 @@ const faq = [
   <Container className="flex flex-col gap-2">
     <div class="text-black mb-16">
       <h1 class="text-5xl font-bold mb-5">Frequently Asked Questions</h1>
-      <h2 class="mb-5 text-2xl">Let's Answer Some of Those Questions.</h2>
+      <h2 class="mb-5 text-2xl">Let's answer some of those questions.</h2>
     </div>
 
     <div>
@@ -52,7 +60,7 @@ const faq = [
               {item.question}
             </div>
             <div class="collapse-content">
-              <p>{item.answer}</p>
+              <p set:html={item.answer} />
             </div>
           </div>
         ))

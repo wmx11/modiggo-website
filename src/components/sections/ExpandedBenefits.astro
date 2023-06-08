@@ -1,4 +1,5 @@
 ---
+import config from '../../utils/config';
 import styles from '../../utils/styles';
 import AccentBlur from '../AccentBlur.astro';
 import Container from '../Container.astro';
@@ -7,52 +8,61 @@ import TextBlock from '../TextBlock.astro';
 
 const benefits = [
   {
-    icon: '+',
+    iconName: 'ic:baseline-access-time',
+    iconClassName: 'max-w-[35px] w-full',
     title: 'Pause or Cancel Anytime',
     description:
       "Don't have enough work for us? Pause and use the remainder anytime you have more work coming in.",
   },
   {
-    icon: '+',
+    iconName: 'fa:dollar',
+    iconClassName: 'max-w-[15px] w-full',
     title: 'Fixed Rates',
     description: 'Easy and predictable rates without surprises.',
   },
   {
-    icon: '+',
+    iconName: 'fa:expand',
+    iconClassName: 'max-w-[25px] w-full',
     title: 'Flexible & Scalable',
     description:
       'Scale the services up and down as needed. Pause or cancel anytime.',
   },
   {
-    icon: '+',
-    title: 'High-Quality work',
+    iconName: 'ion:hammer',
+    iconClassName: 'max-w-[35px] w-full',
+    title: 'High-Quality Work',
     description: 'We take pride in our craft and deliver high-quality work.',
   },
   {
-    icon: '+',
-    title: 'Priority Support',
-    description: 'Receive priority support as a partner.',
+    iconName: 'fluent:wrench-24-filled',
+    iconClassName: 'max-w-[35px] w-full',
+    title: 'Priority Support & Maintenance',
+    description:
+      'Each partnership plan comes with 3 months of free support & maintenance hours. Even after terminating your partnership plan, we will make sure to provide support and maintenance for free.',
   },
   {
-    icon: '+',
+    iconName: 'gg:phone',
+    iconClassName: 'max-w-[35px] w-full',
     title: 'Consulting',
     description:
-      'Schedule consultation calls & receive industry expert opinion. Each partnership plan comes with a few hours of free calls (valued at $70/hr).',
+      'Schedule consultation calls & receive industry expert opinion. Each partnership plan comes with a few hours of free calls (valued at $90/hr).',
   },
   {
-    icon: '+',
+    iconName: 'vaadin:piggy-bank-coin',
+    iconClassName: 'max-w-[35px] w-full',
     title: 'Free Websites*',
-    description:
-      "Don't have the budget? Enroll in our 'Forge' programme and we will develop a free website just for You. Totally free.",
+    description: `Don't have the budget or the time to learn no-code and web builder tools? <a href='${config.freeWebsiteApplicationLink}' target='_blank' class='link'>Submit an application</a> and we will get back to you within 24-48 hours.`,
   },
   {
-    icon: '+',
-    title: 'Customer Oriented',
+    iconName: 'fa:group',
+    iconClassName: 'max-w-[35px] w-full',
+    title: 'Customer-Oriented',
     description:
       'You are not JUST a customer. We treat our customers as partners. Honesty, integrity, & expertise straight from the digital blacksmith.',
   },
   {
-    icon: '+',
+    iconName: 'mdi:heart',
+    iconClassName: 'max-w-[35px] w-full',
     title: 'Refinement',
     description:
       "Quality is important. We will refine our deliverables until you're happy with the results. Additionally, we take great care in delivering performant applications.",

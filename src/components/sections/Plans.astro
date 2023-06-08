@@ -1,77 +1,10 @@
 ---
-import { Icon } from 'astro-icon';
+import config from '../../utils/config';
+import styles from '../../utils/styles';
 import AccentBlur from '../AccentBlur.astro';
 import Container from '../Container.astro';
 import Pattern from '../Pattern.astro';
-import config from '../../utils/config';
-import styles from '../../utils/styles';
-
-const plans = [
-  {
-    label: 'Apprentice',
-    labelDescription:
-      "The Apprentice plan is perfect for you if you have small requirements and don't have a consistent flow of ideas or work.",
-    price: '$1,599/month',
-    priceDescription: 'Pause or cancel anytime.',
-    paymentLink: '',
-    included: [
-      'Free consultation calls up to 2 hours',
-      '~35 hours of work',
-      'Unlimited reviews',
-      'One request at a time',
-      'Pause or cancel anytime',
-    ],
-  },
-  {
-    label: 'Journeyman',
-    labelDescription:
-      'The Journeyman plan is perfect for you if you have medium complexity requirements or have a more consistent flow of ideas or work.',
-    price: '$5,699/month',
-    priceDescription: 'Pause or cancel anytime.',
-    paymentLink: '',
-    included: [
-      'Free consultation calls up to 4 hours',
-      '~80 hours of work',
-      'Priority support',
-      'Unlimited reviews',
-      'One request at a time',
-      'Pause or cancel anytime',
-    ],
-  },
-  {
-    label: 'Master',
-    labelDescription:
-      'The Master plan is perfect for you if you have complex requirements and have a huge flow of ideas or work.',
-    price: '$9,999/month',
-    priceDescription: 'Pause or cancel anytime.',
-    paymentLink: '',
-    included: [
-      'Free consultation calls up to 8 hours',
-      '~125 hours of work',
-      'Priority support',
-      'Unlimited reviews',
-      'One request at a time',
-      'Pause or cancel anytime',
-    ],
-  },
-  {
-    label: 'Custom',
-    labelDescription:
-      "Looking for something different? Schedule a call and let's refine your ideas!",
-    price: 'Custom',
-    priceDescription: 'No shame in canceling or pausing a custom plan!',
-    paymentLink: '',
-    included: [
-      'Free consultation calls up to 2 hours',
-      'Custom hours of work',
-      'Development & custom work',
-      'Priority & additional support',
-      'Unlimited reviews',
-      'One request at a time',
-      'Pause or cancel anytime',
-    ],
-  },
-];
+import PaymentPlans from '../svelte/PaymentPlans.svelte';
 ---
 
 <section class={styles.section} id="plans">
@@ -79,55 +12,17 @@ const plans = [
     <div class="text-black mb-16">
       <h1 class="text-5xl font-bold mb-5">Partnership Plans</h1>
       <h2 class="mb-5 text-2xl">
-        Choose the Right Plan For You. Pause or Cancel Anytime Based on Your
-        Workload.
+        Choose the right plan for you. Pause or cancel anytime based on your
+        workload.
       </h2>
     </div>
-    <div class="flex flex-wrap gap-2 mb-2">
-      {
-        plans?.map((item) => (
-          <div class="card bg-zinc-100 lg:min-w-[368px] lg:max-w-[368px] p-4">
-            <div class="flex flex-col justify-between h-full">
-              <div>
-                <div class="mb-16 h-full max-h-[120px]">
-                  <div class="text-3xl font-bold mb-2">{item.label}</div>
-                  <div class="text-black/50">{item.labelDescription}</div>
-                </div>
-                <div class="mb-16 h-full max-h-[60px]">
-                  <div class="text-3xl font-bold mb-2">{item.price}</div>
-                  <div class="text-black/50">{item.priceDescription}</div>
-                </div>
-                <div class="mb-16">
-                  <ul class="[&>li]:mb-2">
-                    {item.included.map((el) => (
-                      <li class="flex gap-2 items-center">
-                        <Icon name="gg:check-o" class="w-[16px] text-primary" />
-                        {el}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              <div>
-                <button class="btn btn-neutral btn-block text-white mb-8 md:mb-2">
-                  Get started
-                </button>
-                <a href={config.calendarLink} target="_blank" class="link">
-                  Book a call
-                </a>
-              </div>
-            </div>
-          </div>
-        ))
-      }
-    </div>
+    <PaymentPlans client:visible />
     <div class="card w-full bg-primary text-white overflow-hidden relative">
       <div class="card-body py-10 z-10">
-        <h2 class="card-title text-5xl mb-5 font-bold">Want to chat?</h2>
+        <h2 class="card-title text-5xl mb-5 font-bold">Get a Tour</h2>
         <p class="mb-5">
-          Learn more about Modiggo. Get a short trip through our digital smith
-          shop and see how it can help you.
+          Learn more about Modiggo. Get a short tour through our digital
+          blacksmith shop and see how we can help you.
         </p>
         <div class="card-actions">
           <a

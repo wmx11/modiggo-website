@@ -4,12 +4,13 @@ import Container from '../Container.astro';
 import AccentBlur from '../AccentBlur.astro';
 import Pattern from '../Pattern.astro';
 import styles from '../../utils/styles';
+import config from '../../utils/config';
 
 const services = [
   'Web Development',
   'Web3 Development',
   'Web Design',
-  'Free Websites*',
+  `<a href="${config.freeWebsiteApplicationLink}" target="_blank" class="link">Free Websites*</a>`,
   'Landing Pages',
   'Static Pages',
   'Sales Pages',
@@ -58,7 +59,7 @@ const services = [
                 services?.map((item) => (
                   <li class="flex gap-2 items-center">
                     <Icon name="gg:check-o" class="w-[16px] text-primary" />
-                    {item}
+                    <div set:html={item} />
                   </li>
                 ))
               }
