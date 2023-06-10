@@ -1,15 +1,13 @@
 ---
-import config from '../../utils/config';
 import styles from '../../utils/styles';
-import AccentBlur from '../AccentBlur.astro';
 import Container from '../Container.astro';
-import Pattern from '../Pattern.astro';
+import HaveQuestionsCard from '../HaveQuestionsCard.astro';
 import PaymentPlans from '../svelte/PaymentPlans.svelte';
 ---
 
-<section class={styles.section} id="plans">
+<section class={styles.section} id="partnership-plans">
   <Container>
-    <div class="text-black mb-16">
+    <div class="text-black mb-16 animate">
       <h1 class="text-5xl font-bold mb-5">Partnership Plans</h1>
       <h2 class="mb-5 text-2xl">
         Choose the right plan for you. Pause or cancel anytime based on your
@@ -17,23 +15,6 @@ import PaymentPlans from '../svelte/PaymentPlans.svelte';
       </h2>
     </div>
     <PaymentPlans client:visible />
-    <div class="card w-full bg-primary text-white overflow-hidden relative">
-      <div class="card-body py-10 z-10">
-        <h2 class="card-title text-5xl mb-5 font-bold">Get a Tour</h2>
-        <p class="mb-5">
-          Learn more about Modiggo. Get a short tour through our digital
-          blacksmith shop and see how we can help you.
-        </p>
-        <div class="card-actions">
-          <a
-            href={config.calendarLink}
-            target="_blank"
-            class="btn btn-neutral text-white">Book a Call</a
-          >
-        </div>
-      </div>
-      <Pattern />
-      <AccentBlur />
-    </div>
+    <HaveQuestionsCard />
   </Container>
 </section>

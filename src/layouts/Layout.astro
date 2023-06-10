@@ -30,31 +30,57 @@ import Footer from '../components/sections/Footer.astro';
 </html>
 
 <script>
+	import { animate, inView, stagger } from 'motion';
 	import config from '../utils/config';
+
 	document
 		?.querySelectorAll(`[data-handler="${config.handlers.goToPlans}"]`)
 		.forEach((el) => {
 			el?.addEventListener('click', () => {
 				document
-					?.querySelector(`#${config.ids.plans}`)
+					?.querySelector(`#${config.ids.partnershipPlans}`)
 					?.scrollIntoView({ behavior: 'smooth' });
-				window.history.pushState({}, '', `#${config.ids.plans}`);
+				window.history.pushState({}, '', `#${config.ids.partnershipPlans}`);
 			});
 		});
+
+	inView(
+		'section',
+		(info) => {
+			animate(
+				info.target.querySelectorAll('.animate'),
+				{
+					opacity: [0, 1],
+					transform: ['translateY(-50px) rotate(2deg)', 'translateY(0px)'],
+				},
+				{
+					duration: 0.5,
+					delay: stagger(0.1),
+				}
+			);
+		},
+		{ margin: '-25%' }
+	);
 </script>
 
 <style is:global>
 	:root {
 	}
+
 	html {
 		color: #0c0c19;
 		font-family: 'Montserrat', sans-serif;
 	}
+
 	.pattern {
 		background-color: transparent;
 		opacity: 0.1;
 		background-image: linear-gradient(#ffffff50 0.552px, transparent 0.552px),
 			linear-gradient(to right, #ffffff50 0.552px, transparent 0.552px);
 		background-size: 10px 10px;
+	}
+
+	.animate {
+		opacity: 0;
 	}
 </style>

@@ -116,7 +116,7 @@
 </div>
 <div class="flex flex-wrap gap-2 mb-2">
   {#each plans as item}
-    <div class="card bg-zinc-100 lg:min-w-[368px] lg:max-w-[368px] p-4">
+    <div class="card bg-zinc-100 lg:min-w-[370px] lg:max-w-[370px] p-4">
       <div class="flex flex-col justify-between h-full">
         <div>
           <div class="mb-16 h-full max-h-[120px]">
@@ -134,7 +134,7 @@
               {/if}
             </div>
             {#if period > 1 && item.price > 0}
-              <div class="text-black/50 text-sm mb-2">
+              <div class="text-secondary text-sm mb-2">
                 Save ${calculateSavings(item.price).toLocaleString()}
                 per month
               </div>

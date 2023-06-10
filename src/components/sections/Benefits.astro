@@ -29,7 +29,7 @@ const benefits = [
 
 <section class={styles.section}>
   <Container>
-    <div class="mb-16">
+    <div class="mb-16 animate">
       <h1 class="text-5xl font-bold mb-5">Forging Digital Marvels</h1>
       <h2 class="mb-5 text-2xl">
         We mold your digital presence with precision and expertise. Let's hammer
@@ -40,7 +40,10 @@ const benefits = [
     <div class="flex flex-wrap items-center justify-between gap-16">
       {
         benefits?.map((item) => (
-          <TextBlock className="md:basis-[calc(33.3%-64px)] test" {...item} />
+          <TextBlock
+            className="md:basis-[calc(33.3%-64px)] animate"
+            {...item}
+          />
         ))
       }
     </div>

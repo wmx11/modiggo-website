@@ -3,7 +3,7 @@ const config = {
   freeWebsiteApplicationLink: 'https://forms.gle/q11XFBug7Pb1svwz9',
   priceDiscount: 0.12,
   ids: {
-    plans: 'plans',
+    partnershipPlans: 'partnership-plans',
   },
   handlers: {
     goToPlans: 'goToPlans',

@@ -70,22 +70,11 @@ const benefits = [
 ];
 ---
 
-<script>
-  import { animate, stagger, inView } from 'motion';
-  inView('.bzz', (info) => {
-    animate(
-      '.test',
-      { opacity: [0, 1], transform: ['translateY(0px)', 'translateY(10px)'] },
-      { duration: 1, delay: stagger(0.1) }
-    );
-  });
-</script>
-
 <section
   class={`${styles.section} min-h-screen bg-black relative overflow-hidden`}
 >
   <Container>
-    <div class="text-white mb-16 relative z-10">
+    <div class="text-white mb-16 relative z-10 animate">
       <h1 class="text-5xl font-bold mb-5">We Take Pride in Our Craft</h1>
       <h2 class="mb-5 text-2xl">
         We forge sleek designs and temper robust functionalities. Your websites
@@ -93,10 +82,13 @@ const benefits = [
         substance.
       </h2>
     </div>
-    <div class="flex flex-wrap justify-between gap-16 text-white bzz">
+    <div class="flex flex-wrap justify-between gap-16 text-white">
       {
         benefits?.map((item) => (
-          <TextBlock className="md:basis-[calc(33.3%-64px)] test" {...item} />
+          <TextBlock
+            className="md:basis-[calc(33.3%-64px)] animate"
+            {...item}
+          />
         ))
       }
     </div>

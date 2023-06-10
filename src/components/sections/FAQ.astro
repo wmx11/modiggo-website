@@ -2,65 +2,29 @@
 import styles from '../../utils/styles';
 import Container from '../Container.astro';
 
-const faq = [
-  { question: 'How do I pause?', answer: 'Test' },
-  { question: 'How do I cancel?', answer: 'Test' },
-  { question: 'Who are the developers?', answer: 'Test' },
-  {
-    question: 'What tech stack are you using?',
-    answer: `We mainly do our work with HTML, CSS, & JavaScript/TypeScript.
-      <br/>
-      We may use different frameworks for differenet requests. 
-      <br/>
-      Our main framework stack is Astro (Simple websites), NextJS (Single page applications), TailwindCSS, DaisyUI (Tailwind based components), MantineUI (React Components), KeystoneJS (CMS and backend), Ghost (CMS, Blog, Newsletter, Paid Subscriptions/Memberships). 
-      <br/>
-      We use Nginx proxy and Digital Ocean for hosting, managed databases, & VPS. 
-      <br/>
-      <br/> 
-      You can also request Web3 related work - we use Solidity for smart contracts, ThirdWeb, Web3JS, EtherJS, and NextJS for dApps.`,
-  },
-  { question: 'Do you offer additional services?', answer: 'Test' },
-  { question: 'How do I request features or changes?', answer: 'Test' },
-  {
-    question: "What if I'm not happy with the results?",
-    answer:
-      'Not an issue! We will make sure we refine the deliverables until you are satisfied with the results.',
-  },
-  { question: 'How fast will I receive my deliverables?', answer: 'Test' },
-  {
-    question: 'Why not just hire a full-time developer?',
-    answer:
-      'High quality, senior-level full-time developers come with a lot of overhead. You would have to pay $125,000 per year, plus benefits. Not to mention they are really difficult to find. Also, you may not have enough work to keep them occupied for the whole year so you would be stuck paying them a high salary. Our partnership plans allow you to pause and resume your subscriptions based on the amount of work you have.',
-  },
-  {
-    question: "Can I get a refund if I don't like the services?",
-    answer: 'No refunds will be issued due to the nature of the services.',
-  },
-  {
-    question: 'Do I have a limit on how many requests I can have?',
-    answer:
-      'You can request features and changes for the duration of your subscription if it does not exceed the total amount of work hours. Requests will be filled one by one.',
-  },
-];
+const faq = await Astro.glob('../../content/faq/*.md');
+const sortedFaq = faq
+  .map((item) => ({ content: item, length: item?.frontmatter?.title?.length }))
+  .sort((a, b) => a?.length - b?.length)
+  .map((sorted) => sorted?.content);
 ---
 
-<section class={styles.section}>
+<section class={styles.section} id="faq">
   <Container className="flex flex-col gap-2">
-    <div class="text-black mb-16">
+    <div class="text-black mb-16 animate">
       <h1 class="text-5xl font-bold mb-5">Frequently Asked Questions</h1>
       <h2 class="mb-5 text-2xl">Let's answer some of those questions.</h2>
     </div>
-
     <div>
       {
-        faq?.map((item) => (
+        sortedFaq?.map((item) => (
           <div class="collapse collapse-arrow border-b border-black mb-2">
             <input type="radio" name="accordion" />
             <div class="collapse-title text-xl font-medium">
-              {item.question}
+              {item.frontmatter.title}
             </div>
-            <div class="collapse-content">
-              <p set:html={item.answer} />
+            <div class="collapse-content prose prose-lg max-w-none">
+              <p set:html={item.compiledContent()} />
             </div>
           </div>
         ))
