@@ -3,6 +3,10 @@ import styles from '../../utils/styles';
 import Container from '../Container.astro';
 import HaveQuestionsCard from '../HaveQuestionsCard.astro';
 import PaymentPlans from '../svelte/PaymentPlans.svelte';
+
+const paymentPlansContent = await Astro.glob(
+  '../../content/payment-plans/*.md'
+);
 ---
 
 <section class={styles.section} id="partnership-plans">
@@ -14,7 +18,7 @@ import PaymentPlans from '../svelte/PaymentPlans.svelte';
         workload.
       </h2>
     </div>
-    <PaymentPlans client:visible />
+    <PaymentPlans client:visible paymentPlansContent={paymentPlansContent} />
     <HaveQuestionsCard />
   </Container>
 </section>

@@ -31,18 +31,17 @@ import Footer from '../components/sections/Footer.astro';
 
 <script>
 	import { animate, inView, stagger } from 'motion';
-	import config from '../utils/config';
 
-	document
-		?.querySelectorAll(`[data-handler="${config.handlers.goToPlans}"]`)
-		.forEach((el) => {
-			el?.addEventListener('click', () => {
-				document
-					?.querySelector(`#${config.ids.partnershipPlans}`)
-					?.scrollIntoView({ behavior: 'smooth' });
-				window.history.pushState({}, '', `#${config.ids.partnershipPlans}`);
-			});
+	document?.querySelectorAll(`[data-scroll-to]`).forEach((el) => {
+		const element = el as HTMLBaseElement;
+
+		element?.addEventListener('click', () => {
+			document
+				?.querySelector(element?.dataset?.scrollTo as string)
+				?.scrollIntoView({ behavior: 'smooth' });
+			window.history.pushState({}, '', element?.dataset?.scrollTo as string);
 		});
+	});
 
 	inView(
 		'section',

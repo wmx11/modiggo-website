@@ -3,28 +3,10 @@ import styles from '../../utils/styles';
 import Container from '../Container.astro';
 import TextBlock from '../TextBlock.astro';
 
-const benefits = [
-  {
-    iconName: 'mdi:email-fast',
-    iconClassName: 'max-w-[35px] w-full',
-    title: 'Subscribe & Request',
-    description: 'Subscribe to a partnership plan and place your requests.',
-  },
-  {
-    iconName: 'mdi:heart',
-    iconClassName: 'max-w-[35px] w-full',
-    title: 'Support & Refinement',
-    description:
-      'We will revise deliverables until you’re happy with the results.',
-  },
-  {
-    iconName: 'fa:dollar',
-    iconClassName: 'max-w-[20px] w-full',
-    title: 'No More Full-Time Commitment',
-    description:
-      'No more full-time hassles. Subscribe to a plan, pause, or cancel anytime.',
-  },
-];
+const benefits = await Astro.glob('../../content/benefits/*.md');
+benefits.sort(
+  (a, b) => a.frontmatter.title.length - b.frontmatter.title.length
+);
 ---
 
 <section class={styles.section}>
@@ -42,7 +24,8 @@ const benefits = [
         benefits?.map((item) => (
           <TextBlock
             className="md:basis-[calc(33.3%-64px)] animate"
-            {...item}
+            {...item.frontmatter}
+            description={item.compiledContent()}
           />
         ))
       }

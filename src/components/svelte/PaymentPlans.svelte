@@ -2,96 +2,38 @@
   import 'iconify-icon';
   import config from '../../utils/config';
 
-  const plans = [
-    {
-      label: 'Apprentice',
-      labelDescription:
-        'When you have simple requests, requirements, and a low amount of workload.',
-      price: 1599,
-      priceDescription:
-        'Pause or cancel anytime. <br/> <strong>3 months of ~3 hours/month free (valued $315)</strong> support & maintenance after termination.',
-      paymentLink: '',
-      included: [
-        'Free consultation calls up to 2 hours/month',
-        '~35 hours/month of work',
-        'Unlimited reviews',
-        'One request at a time',
-        'Pause or cancel anytime',
-      ],
-    },
-    {
-      label: 'Journeyman',
-      labelDescription:
-        'When you have medium complexity requests, requirements, and a semi-consistent workload.',
-      price: 5699,
-      priceDescription:
-        'Pause or cancel anytime. <br/> <strong>3 months of ~8 hours/month (valued $1,680) free</strong> support & maintenance after termination.',
-      paymentLink: '',
-      included: [
-        'Free consultation calls up to 4 hours/month',
-        '~80 hours/month of work',
-        'Priority support',
-        'Unlimited reviews',
-        'One request at a time',
-        'Pause or cancel anytime',
-      ],
-    },
-    {
-      label: 'Master',
-      labelDescription:
-        'When you have medium-high complexity requests, requirements, and a consistent workload.',
-      price: 9999,
-      priceDescription:
-        'Pause or cancel anytime. <br/> <strong>3 months of ~12 hours/month (valued $3,240) free</strong> support & maintenance after termination.',
-      paymentLink: '',
-      included: [
-        'Free consultation calls up to 8 hours/month',
-        '~125 hours/month of work',
-        'Priority support',
-        'Unlimited reviews',
-        'One request at a time',
-        'Pause or cancel anytime',
-      ],
-    },
-    {
-      label: 'Custom',
-      labelDescription:
-        'When you’re not sure about the complexity of your requests, requirements, time constraints, and workload.',
-      price: 0,
-      priceDescription:
-        'Pause or cancel anytime. <br/> <strong>3 months free support & maintenance</strong> after termination.',
-      paymentLink: '',
-      included: [
-        'Free consultation calls up to 2 hours/month',
-        'Custom hours of work',
-        'Development & custom work',
-        'Priority & additional support',
-        'Unlimited reviews',
-        'One request at a time',
-        'Pause or cancel anytime',
-      ],
-    },
-  ];
+  export let paymentPlansContent;
 
-  let period = 1;
+  const plans = paymentPlansContent
+    ?.map((item) => {
+      return { ...item.frontmatter };
+    })
+    ?.sort((a, b) => a.order - b.order);
 
-  $: discount = period > 1 ? config.priceDiscount : 0;
+  const MONTH = 1;
+  const QUARTER = 3;
+  const YEAR = 12;
 
-  const timePeriod = {
-    1: 'month',
-    3: 'quarter',
-    12: 'year',
+  const timePeriodLabel = {
+    [MONTH]: 'month',
+    [QUARTER]: 'quarter',
+    [YEAR]: 'year',
   };
 
   const CLASS_ACTIVE = 'tab-active';
 
-  const handleTabClick = (months) => (event) => {
+  // Default period is 1 month
+  let period = MONTH;
+
+  $: discount = period > MONTH ? config.priceDiscount : 0;
+
+  const handleTabClick = (periodInMonths) => (event) => {
     event?.target?.parentElement
       ?.querySelectorAll(`.${CLASS_ACTIVE}`)
       ?.forEach((el) => el?.classList?.remove(CLASS_ACTIVE));
     event?.target?.classList.add(CLASS_ACTIVE);
 
-    period = months;
+    period = periodInMonths;
   };
 
   $: calculatePriceWithDiscount = (price) => {
@@ -100,18 +42,20 @@
 
   $: calculateSavings = (price) => {
     return Math.round(
-      (price * period) / 12 - calculatePriceWithDiscount(price) / 12
+      (price * period) / YEAR - calculatePriceWithDiscount(price) / YEAR
     );
   };
 </script>
 
 <div class="mb-4 flex">
   <div class="tabs tabs-boxed">
-    <button class="tab tab-lg tab-active" on:click={handleTabClick(1)}
+    <button class="tab tab-lg tab-active" on:click={handleTabClick(MONTH)}
       >Monthly</button
     >
-    <button class="tab tab-lg" on:click={handleTabClick(3)}>Quarterly</button>
-    <button class="tab tab-lg" on:click={handleTabClick(12)}>Annually</button>
+    <button class="tab tab-lg" on:click={handleTabClick(QUARTER)}
+      >Quarterly</button
+    >
+    <button class="tab tab-lg" on:click={handleTabClick(YEAR)}>Annually</button>
   </div>
 </div>
 <div class="flex flex-wrap gap-2 mb-2">
@@ -128,13 +72,13 @@
               {#if item.price > 0}
                 ${calculatePriceWithDiscount(
                   item.price
-                ).toLocaleString()}/{timePeriod[period]}
+                ).toLocaleString()}/{timePeriodLabel[period]}
               {:else}
                 Custom
               {/if}
             </div>
             {#if period > 1 && item.price > 0}
-              <div class="text-secondary text-sm mb-2">
+              <div class="text-white text-sm mb-2 badge badge-secondary">
                 Save ${calculateSavings(item.price).toLocaleString()}
                 per month
               </div>
@@ -157,9 +101,15 @@
         </div>
 
         <div>
-          <button class="btn btn-neutral btn-block text-white mb-8 md:mb-2">
+          <a
+            href={item.price > 0
+              ? item.paymentLink[period]
+              : config.calendarLink}
+            target="_blank"
+            class="btn btn-neutral btn-block text-white mb-8 md:mb-2"
+          >
             Get started
-          </button>
+          </a>
           <a href={config.calendarLink} target="_blank" class="link">
             Book a call
           </a>
