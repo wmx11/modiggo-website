@@ -8,6 +8,7 @@ paymentLink: ''
 included: [
   'Free consultation calls up to 2 hours/month',
   'Custom hours of work',
+  'Free bugfixes',
   'Development & custom work',
   'Priority & additional support',
   'One-time payment available',

@@ -1,41 +1,22 @@
 ---
 import { Icon } from 'astro-icon';
-import Container from '../Container.astro';
-import AccentBlur from '../AccentBlur.astro';
-import Pattern from '../Pattern.astro';
 import styles from '../../utils/styles';
-import config from '../../utils/config';
+import AccentBlur from '../AccentBlur.astro';
+import Container from '../Container.astro';
+import Pattern from '../Pattern.astro';
 
-const services = [
-  'Web Development',
-  'Web3 Development',
-  'Web Design',
-  `<a href="${config.freeWebsiteApplicationLink}" target="_blank" class="link">Free Websites*</a>`,
-  'Landing Pages',
-  'Static Pages',
-  'Sales Pages',
-  'E-commerce Development',
-  'Newsletter Development',
-  'Blog Development',
-  'SaaS Development',
-  'Integrations',
-  'Consulting',
-  'Automation',
-  'Branding',
-  'Web Hosting',
-  'Database Hosting',
-  'Page Speed Optimization',
-  'Social Media Marketing',
-  'Support & Maintenance',
-  'Search Engine Optimization',
-];
+import * as whatWeDo from '../../content/services/what-we-do.md';
+import * as whatWeSolve from '../../content/services/what-we-solve.md';
+import * as whoWeAre from '../../content/services/who-we-are.md';
 ---
 
 <section class={styles.section} id="scope-of-work">
   <Container>
     <div class="text-black mb-16 animate">
-      <h1 class="text-5xl font-bold mb-5">Scope of Work</h1>
-      <h2 class="mb-5 text-2xl">Lorem ipsum dolore.</h2>
+      <h1 class="text-5xl font-bold mb-5">Our Manifesto</h1>
+      <h2 class="mb-5 text-2xl">
+        Forging digital equipment for your business. See how we can help you.
+      </h2>
     </div>
     <div>
       <div
@@ -44,19 +25,18 @@ const services = [
         <Pattern />
         <AccentBlur />
       </div>
-      <div class="flex flex-col md:flex-row flex-wrap gap-8 md:gap-16 animate">
-        <div class="flex-1">
-          <h2 class="text-3xl mb-5 font-bold">Overview</h2>
-          <p class="text-lg mb-5">
-            Since 1984, Flowbite has been serving up grab-and-go frozen
-            daiquiris from its stores across the U.S. Its signature drinks,
-            souvenir cups, and discounted refills have made Flowbite synonymous
-            with great music, good vibes, and starting the best party in town.
-          </p>
+      <div class="flex flex-col md:flex-row flex-wrap gap-8 md:gap-16">
+        <div class="flex-1 animate">
+          <h2 class="text-3xl mb-5 font-bold">
+            {whatWeDo?.frontmatter?.title}
+          </h2>
+          <div class="mb-5">
+            <div class="text-lg mb-5" set:html={whatWeDo.compiledContent()} />
+          </div>
           <div class="md:columns-2 lg:columns-3">
             <ul class="[&>li]:mb-4">
               {
-                services?.map((item) => (
+                whatWeDo?.frontmatter?.services?.map((item: string) => (
                   <li class="flex gap-2 items-center">
                     <Icon name="gg:check-o" class="w-[16px] text-primary" />
                     <div set:html={item} />
@@ -67,25 +47,20 @@ const services = [
           </div>
         </div>
         <div class="flex-1">
-          <div>
-            <h2 class="text-3xl mb-5 font-bold">Background</h2>
-            <p class="text-lg mb-5">
-              Since 1984, Flowbite has been serving up grab-and-go frozen
-              daiquiris from its stores across the U.S. Its signature drinks,
-              souvenir cups, and discounted refills have made Flowbite
-              synonymous with great music, good vibes, and starting the best
-              party in town.
-            </p>
+          <div class="mb-8 animate">
+            <h2 class="text-3xl mb-5 font-bold">
+              {whoWeAre?.frontmatter?.title}
+            </h2>
+            <div class="text-lg mb-5" set:html={whoWeAre.compiledContent()} />
           </div>
-          <div>
-            <h2 class="text-3xl mb-5 font-bold">Challenges</h2>
-            <p class="text-lg mb-5">
-              Since 1984, Flowbite has been serving up grab-and-go frozen
-              daiquiris from its stores across the U.S. Its signature drinks,
-              souvenir cups, and discounted refills have made Flowbite
-              synonymous with great music, good vibes, and starting the best
-              party in town.
-            </p>
+          <div class="mb-8 animate">
+            <h2 class="text-3xl mb-5 font-bold">
+              {whatWeSolve?.frontmatter?.title}
+            </h2>
+            <div
+              class="text-lg mb-5"
+              set:html={whatWeSolve.compiledContent()}
+            />
           </div>
         </div>
       </div>

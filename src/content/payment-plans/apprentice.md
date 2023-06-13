@@ -12,6 +12,7 @@ paymentLink: {
 included: [
   'Free consultation calls up to 2 hours/month',
   'Free refinement calls',
+  'Free bugfixes',
   '~40 hours/month of work',
   'Unlimited reviews',
   'One request at a time',

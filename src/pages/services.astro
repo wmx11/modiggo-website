@@ -1,13 +1,13 @@
 ---
+import { Image } from '@astrojs/image/components';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Container from '../components/Container.astro';
 import HaveQuestionsCard from '../components/HaveQuestionsCard.astro';
-import LargeCard from '../components/LargeCard.astro';
 import Layout from '../layouts/Layout.astro';
 import config from '../utils/config';
 import styles from '../utils/styles';
 
-const services = await Astro.glob('../content/services/*.md');
+const services = await Astro.glob('../content/additional-services/*.md');
 ---
 
 <Layout title="Additional Services">
@@ -18,37 +18,51 @@ const services = await Astro.glob('../content/services/*.md');
         <div class="text-black mb-16 animate">
           <h1 class="text-5xl font-bold mb-5">Additional Services</h1>
           <h2 class="mb-5 text-2xl">
-            Choose the right plan for you. Pause or cancel anytime based on your
-            workload.
+            A website is only a single sword in your arsenal. You may need
+            additional items to conquer the digital world.
           </h2>
         </div>
 
         <div class="flex flex-wrap gap-4 mb-4">
           {
             services?.map((item) => (
-              <div class="card w-96 bg-base-100 shadow-xl">
-                <div class="bg-red-200 h-[200px] w-full">
-                  <img
-                    src={item?.frontmatter?.image}
-                    alt={item?.frontmatter?.imageAlt}
-                  />
+              <div class="card basis-[100%] lg:basis-[calc(33%-16px)] bg-base-100 border">
+                <div class="max-h-[350px] w-full">
+                  {item.frontmatter.image ? (
+                    <Image
+                      position="center"
+                      src={
+                        import(/* @vite-ignore */ item?.frontmatter?.image) ??
+                        ''
+                      }
+                      alt={item?.frontmatter?.imageAlt}
+                      height={350}
+                      width={750}
+                    />
+                  ) : null}
                 </div>
                 <div class="card-body">
                   <h2 class="card-title">{item?.frontmatter?.title}</h2>
-                  <h2 class="card-title">{item?.frontmatter?.price}</h2>
+                  <h2 class="card-title text-primary">
+                    {item?.frontmatter?.price}
+                  </h2>
                   <p set:html={item?.compiledContent()} />
                   <div class="card-actions justify-end">
-                    <button class="btn btn-primary text-white">Buy Now</button>
+                    <a
+                      href={config.calendarLink}
+                      target="_blank"
+                      class="btn btn-neutral text-white"
+                    >
+                      Book a call
+                    </a>
                   </div>
                 </div>
               </div>
             ))
           }
         </div>
-
         <HaveQuestionsCard />
       </Container>
     </section>
-    <div></div>
   </main>
 </Layout>

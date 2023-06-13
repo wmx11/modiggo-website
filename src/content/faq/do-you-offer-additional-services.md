@@ -2,8 +2,6 @@
 title: Do you offer additional services?
 ---
 
-The thing is.
+You may not be interested in just subscription-based web development services. And our digital blacksmith's shop has more to offer!
 
-You don't
-
-**Lmao**
+You can find additional services on the ["Additional Services" page.](/services)
