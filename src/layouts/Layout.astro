@@ -39,10 +39,15 @@ import Footer from '../components/sections/Footer.astro';
 		const element = el as HTMLBaseElement;
 
 		element?.addEventListener('click', () => {
-			document
-				?.querySelector(element?.dataset?.scrollTo as string)
-				?.scrollIntoView({ behavior: 'smooth' });
-			window.history.pushState({}, '', element?.dataset?.scrollTo as string);
+			const location = window.location.pathname;
+			if (location === '/') {
+				document
+					?.querySelector(element?.dataset?.scrollTo as string)
+					?.scrollIntoView({ behavior: 'smooth' });
+				window.history.pushState({}, '', element?.dataset?.scrollTo as string);
+			} else {
+				window.location.replace(`/${element?.dataset?.scrollTo as string}`);
+			}
 		});
 	});
 
