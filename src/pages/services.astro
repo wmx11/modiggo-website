@@ -23,7 +23,7 @@ const services = await Astro.glob('../content/additional-services/*.md');
       <div class="flex flex-wrap gap-4 mb-4">
         {
           services?.map((item) => (
-            <div class="card basis-[100%] lg:basis-[calc(33%-16px)] bg-base-100 border">
+            <div class="card basis-[100%] lg:basis-[calc(33.3%-10.2px)] bg-base-100 border">
               <div class="max-h-[350px] w-full">
                 {item.frontmatter.image ? (
                   <Image

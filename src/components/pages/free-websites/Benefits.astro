@@ -1,4 +1,6 @@
 ---
+import { Image } from '@astrojs/image/components';
+import WebsiteImage from '../../../assets/images/website.png';
 import styles from '../../../utils/styles';
 import Container from '../../Container.astro';
 import Heading from '../../Heading.astro';
@@ -17,7 +19,15 @@ import * as BenefitsContent from '../../../content/free-websites/benefits.md';
         class="flex-1 text-lg"
         set:html={BenefitsContent.compiledContent()}
       />
-      <div class="flex-1 bg-red-200">Image</div>
+      <div class="flex-1 md:max-w-[40%]">
+        <Image
+          src={WebsiteImage}
+          alt="A website image from Modiggo"
+          class="sticky top-10 rounded-md overflow-hidden"
+          width={600}
+          height={600}
+        />
+      </div>
     </div>
   </Container>
 </section>
