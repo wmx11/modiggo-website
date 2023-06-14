@@ -1,4 +1,5 @@
 ---
+import { twMerge } from 'tailwind-merge';
 import AccentBlur from './AccentBlur.astro';
 import Pattern from './Pattern.astro';
 
@@ -10,9 +11,10 @@ const { className } = Astro.props;
 ---
 
 <div
-  class={`${
-    className ?? ''
-  } card w-full bg-primary text-white overflow-hidden relative`}
+  class={twMerge(
+    'card w-full bg-primary text-white overflow-hidden relative',
+    className
+  )}
 >
   <div class="card-body py-10 z-10">
     <slot />

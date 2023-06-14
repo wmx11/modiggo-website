@@ -1,0 +1,23 @@
+---
+import styles from '../../../utils/styles';
+import Container from '../../Container.astro';
+import Heading from '../../Heading.astro';
+
+import * as BenefitsContent from '../../../content/free-websites/benefits.md';
+---
+
+<section class={styles.section}>
+  <Container>
+    <Heading
+      title="A Well-Crafted Website"
+      subtitle="Is fast, trustworthy, SEO-optimized, mobile-friendly, and great-converting."
+    />
+    <div class="flex flex-col md:flex-row flex-wrap gap-8">
+      <div
+        class="flex-1 text-lg"
+        set:html={BenefitsContent.compiledContent()}
+      />
+      <div class="flex-1 bg-red-200">Image</div>
+    </div>
+  </Container>
+</section>

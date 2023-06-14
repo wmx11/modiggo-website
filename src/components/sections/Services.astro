@@ -8,16 +8,15 @@ import Pattern from '../Pattern.astro';
 import * as whatWeDo from '../../content/services/what-we-do.md';
 import * as whatWeSolve from '../../content/services/what-we-solve.md';
 import * as whoWeAre from '../../content/services/who-we-are.md';
+import Heading from '../Heading.astro';
 ---
 
 <section class={styles.section} id="scope-of-work">
   <Container>
-    <div class="text-black mb-16 animate">
-      <h1 class="text-5xl font-bold mb-5">Our Manifesto</h1>
-      <h2 class="mb-5 text-2xl">
-        Forging digital equipment for your business. See how we can help you.
-      </h2>
-    </div>
+    <Heading
+      title="Our Manifesto"
+      subtitle="Forging digital equipment for your business. See how we can help you."
+    />
     <div>
       <div
         class="card bg-[url('shop_background.png')] bg-fixed bg-no-repeat bg-cover bg-center h-[320px] mb-16 relative overflow-hidden"

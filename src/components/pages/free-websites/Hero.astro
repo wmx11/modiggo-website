@@ -1,0 +1,22 @@
+---
+import config from '../../../utils/config';
+import Container from '../../Container.astro';
+import HeroHeading from '../../HeroHeading.astro';
+import HeroWrapper from '../../HeroWrapper.astro';
+---
+
+<section>
+  <HeroWrapper>
+    <Container className="text-white z-10">
+      <HeroHeading
+        title="Let's Forge a Professional Website. For FREE."
+        subtitle="Focus on your business while we hammer your red-hot ideas into a professional website. Free of charge."
+      />
+      <a
+        href={config.freeWebsiteApplicationLink}
+        target="_blank"
+        class="btn btn-neutral btn-lg z-10 relative text-white">Apply now</a
+      >
+    </Container>
+  </HeroWrapper>
+</section>

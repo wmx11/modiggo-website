@@ -4,7 +4,7 @@ services: [
   'Web Development',
   'Web3 Development',
   'Web Design',
-  '<a href="https://forms.gle/q11XFBug7Pb1svwz9" target="_blank" class="link">Free Websites*</a>',
+  '<a href="/free-websites" target="_blank" class="link">Free Websites*</a>',
   'Landing Pages',
   'Static Pages',
   'Sales Pages',

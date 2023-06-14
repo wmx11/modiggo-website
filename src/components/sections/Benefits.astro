@@ -1,6 +1,7 @@
 ---
 import styles from '../../utils/styles';
 import Container from '../Container.astro';
+import Heading from '../Heading.astro';
 import TextBlock from '../TextBlock.astro';
 
 const benefits = await Astro.glob('../../content/benefits/*.md');
@@ -11,14 +12,10 @@ benefits.sort(
 
 <section class={styles.section}>
   <Container>
-    <div class="mb-16 animate">
-      <h1 class="text-5xl font-bold mb-5">Forging Digital Marvels</h1>
-      <h2 class="mb-5 text-2xl">
-        We mold your digital presence with precision and expertise. Let's hammer
-        out those red-hot ideas.
-      </h2>
-    </div>
-
+    <Heading
+      title="Forging Digital Marvels"
+      subtitle="We mold your digital presence with precision and expertise. Let's hammer out those red-hot ideas."
+    />
     <div class="flex flex-wrap items-center justify-between gap-16">
       {
         benefits?.map((item) => (

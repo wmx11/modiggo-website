@@ -1,0 +1,24 @@
+---
+import styles from '../../../utils/styles';
+import Container from '../../Container.astro';
+import Heading from '../../Heading.astro';
+
+import * as ReasoningContent from '../../../content/free-websites/reasoning.md';
+---
+
+<section class={styles.section}>
+  <Container>
+    <Heading
+      title="No Price Tag. But Why?"
+      subtitle="Don't worry about paying. We're more interested in helping you forge your red-hot ideas into profitable business."
+    />
+
+    <div class="flex flex-col md:flex-row flex-wrap gap-8">
+      <div class="flex-1 bg-red-200">Image</div>
+      <div
+        class="flex-1 text-lg"
+        set:html={ReasoningContent.compiledContent()}
+      />
+    </div>
+  </Container>
+</section>

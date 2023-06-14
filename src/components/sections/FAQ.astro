@@ -1,6 +1,7 @@
 ---
 import styles from '../../utils/styles';
 import Container from '../Container.astro';
+import Heading from '../Heading.astro';
 
 const faq = await Astro.glob('../../content/faq/*.md');
 const sortedFaq = faq
@@ -11,10 +12,10 @@ const sortedFaq = faq
 
 <section class={styles.section} id="faq">
   <Container className="flex flex-col gap-2">
-    <div class="text-black mb-16 animate">
-      <h1 class="text-5xl font-bold mb-5">Frequently Asked Questions</h1>
-      <h2 class="mb-5 text-2xl">Let's answer some of your questions.</h2>
-    </div>
+    <Heading
+      title="Frequently Asked Questions"
+      subtitle="Let's answer some of those red-hot questions."
+    />
     <div>
       {
         sortedFaq?.map((item) => (

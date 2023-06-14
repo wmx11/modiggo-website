@@ -1,4 +1,7 @@
 ---
+import { Icon } from 'astro-icon';
+import { twMerge } from 'tailwind-merge';
+
 interface Props {
   title?: string;
   description?: string;
@@ -7,15 +10,14 @@ interface Props {
   className?: string;
 }
 
-import { Icon } from 'astro-icon';
 const { title, description, iconName, iconClassName, className } = Astro.props;
 ---
 
-<div class={`${className} z-10`}>
+<div class={twMerge('z-10', className)}>
   <div>
     {
       iconName ? (
-        <Icon name={iconName} class={`${iconClassName} mb-4` ?? ''} />
+        <Icon name={iconName} class={twMerge('mb-4', iconClassName)} />
       ) : (
         ''
       )

@@ -1,17 +1,15 @@
 ---
-import HeroBackground from '../../assets/images/hero_background.png';
-import AccentBlur from '../AccentBlur.astro';
 import { Image } from '@astrojs/image/components';
+import HeroBackground from '../../assets/images/hero_background.png';
 import Container from '../Container.astro';
+import HeroWrapper from '../HeroWrapper.astro';
 ---
 
 <section>
-  <div
-    class="bg-primary min-h-screen relative overflow-hidden flex items-center justify-center"
-  >
+  <HeroWrapper>
     <Container className="text-white z-10">
       <div>
-        <h1 class="mb-5 text-8xl font-black animate">
+        <h1 class="mb-5 text-5xl sm:text-6xl md:text-8xl font-black animate">
           Your Digital Blacksmith
         </h1>
         <h2 class="mb-5 text-2xl animate">
@@ -31,6 +29,5 @@ import Container from '../Container.astro';
       width={1920}
       height={1080}
     />
-    <AccentBlur />
-  </div>
+  </HeroWrapper>
 </section>

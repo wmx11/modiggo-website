@@ -2,6 +2,7 @@
 import styles from '../../utils/styles';
 import AccentBlur from '../AccentBlur.astro';
 import Container from '../Container.astro';
+import Heading from '../Heading.astro';
 import Pattern from '../Pattern.astro';
 import TextBlock from '../TextBlock.astro';
 
@@ -15,14 +16,11 @@ benefits.sort(
   class={`${styles.section} min-h-screen bg-black relative overflow-hidden`}
 >
   <Container>
-    <div class="text-white mb-16 relative z-10 animate">
-      <h1 class="text-5xl font-bold mb-5">We Take Pride in Our Craft</h1>
-      <h2 class="mb-5 text-2xl">
-        We forge sleek designs and temper robust functionalities. Your websites
-        and applications will be infused with the perfect balance of style and
-        substance.
-      </h2>
-    </div>
+    <Heading
+      className="text-white relative z-10"
+      title="We Take Pride in Our Craft"
+      subtitle="We forge sleek designs and temper robust functionalities. Your websites and applications will be infused with the perfect balance of style and substance."
+    />
     <div class="flex flex-wrap justify-between gap-16 text-white">
       {
         benefits?.map((item) => (

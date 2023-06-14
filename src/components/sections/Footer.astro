@@ -1,11 +1,30 @@
 ---
 import Container from '../Container.astro';
 import Pattern from '../Pattern.astro';
+import { Image } from '@astrojs/image/components';
+import ModiggoLogo from '../../assets/images/modiggo_logo.svg';
+import { Icon } from 'astro-icon';
 ---
 
 <footer class="p-10 bg-black text-white min-h-[420px] relative">
   <Container className="footer z-10 relative">
-    <div></div>
+    <div>
+      <a href="/" class="flex items-center gap-4 mb-8">
+        <Image src={ModiggoLogo} alt="Modiggo Logo" height={50} width={50} />
+        <span class="text-3xl font-bold">Modiggo</span>
+      </a>
+      <div>
+        <a href="https://twitter.com/modiggo" target="_blank"
+          ><Icon name="mdi:twitter" class="text-white w-8" /></a
+        >
+      </div>
+    </div>
+    <div>
+      <span class="footer-title">Company</span>
+      <a class="link link-hover" href="/free-websites">Free websites</a>
+      <a class="link link-hover" href="/services">Additional services</a>
+    </div>
+
     <div>
       <span class="footer-title">Navigation</span>
       <button class="link link-hover" data-scroll-to="#faq">FAQs</button>
@@ -17,14 +36,10 @@ import Pattern from '../Pattern.astro';
       >
     </div>
     <div>
-      <span class="footer-title">Company</span>
-      <a class="link link-hover" href="/services">Additional services</a>
-    </div>
-    <div>
       <span class="footer-title">Legal</span>
-      <a class="link link-hover" href="/terms-of-service">Terms of service</a>
-      <a class="link link-hover" href="/privacy-policy">Privacy policy</a>
       <a class="link link-hover" href="/cookie-policy">Cookie policy</a>
+      <a class="link link-hover" href="/privacy-policy">Privacy policy</a>
+      <a class="link link-hover" href="/terms-of-services">Terms of services</a>
     </div>
   </Container>
   <Pattern />

@@ -2,6 +2,7 @@
 import styles from '../../utils/styles';
 import Container from '../Container.astro';
 import HaveQuestionsCard from '../HaveQuestionsCard.astro';
+import Heading from '../Heading.astro';
 import PaymentPlans from '../svelte/PaymentPlans.svelte';
 
 const paymentPlansContent = await Astro.glob(
@@ -11,13 +12,10 @@ const paymentPlansContent = await Astro.glob(
 
 <section class={styles.section} id="partnership-plans">
   <Container>
-    <div class="text-black mb-16 animate">
-      <h1 class="text-5xl font-bold mb-5">Partnership Plans</h1>
-      <h2 class="mb-5 text-2xl">
-        Choose the right plan for you. Pause or cancel anytime based on your
-        workload.
-      </h2>
-    </div>
+    <Heading
+      title="Partnership Plans"
+      subtitle="Choose the right plan for you. Pause or cancel anytime based on your workload."
+    />
     <PaymentPlans client:visible paymentPlansContent={paymentPlansContent} />
     <HaveQuestionsCard />
   </Container>
