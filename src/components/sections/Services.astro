@@ -1,5 +1,7 @@
 ---
+import { Image } from '@astrojs/image/components';
 import { Icon } from 'astro-icon';
+import ShopBackground from '../../assets/images/shop_background_3.jpeg';
 import styles from '../../utils/styles';
 import AccentBlur from '../AccentBlur.astro';
 import Container from '../Container.astro';
@@ -11,6 +13,26 @@ import * as whoWeAre from '../../content/services/who-we-are.md';
 import Heading from '../Heading.astro';
 ---
 
+<script>
+  import { scroll, inView } from 'motion';
+
+  const image = document?.querySelector('#shop-background') as HTMLBaseElement;
+
+  inView(
+    image,
+    () => {
+      scroll((info) => {
+        image.style.objectPosition = `center ${Math.round(
+          info.y.progress * 200
+        )}%`;
+      });
+    },
+    {
+      margin: '-50%',
+    }
+  );
+</script>
+
 <section class={styles.section} id="scope-of-work">
   <Container>
     <Heading
@@ -19,8 +41,16 @@ import Heading from '../Heading.astro';
     />
     <div>
       <div
-        class="card bg-[url('shop_background.png')] bg-fixed bg-no-repeat bg-cover bg-center h-[320px] mb-16 relative overflow-hidden"
+        class="card h-[320px] mb-16 bg-red-200 relative overflow-hidden z-[-1]"
       >
+        <Image
+          src={ShopBackground}
+          alt="Modiggo blacksmith shop background image"
+          class="absolute inset-0 transition-all w-full h-full object-cover object-center"
+          id="shop-background"
+          height={1080}
+          width={1600}
+        />
         <Pattern />
         <AccentBlur />
       </div>

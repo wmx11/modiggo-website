@@ -5,6 +5,6 @@ image: ../assets/images/hero_background.png
 imageAlt: Modiggo Web Development Services
 ---
 
-Whenever you have additional work (bugfixes, quick features, custom websites, integrations, etc.) or you don't want to purchase a subscription plan you can work directly with us on hourly basis.
+Whenever you have additional work (bug fixes, quick features, custom websites, integrations, etc.) or don't want to purchase a subscription plan, you can work directly with us on an hourly basis.
 
-Book a call to find the amount of hours you may need.
+Book a call to find out how many hours of work you may need.

@@ -4,7 +4,7 @@ title: What technology stack are you using?
 
 The technology stack we use will depend on the complexity and features of the request.
 
-Here's a list of what we commonly use across different projects.
+Here's a list of what we commonly use across different projects:
 
 Frameworks, libraries, and languages:
 

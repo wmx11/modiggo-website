@@ -1,6 +1,6 @@
 ---
 import { Image } from '@astrojs/image/components';
-import WebsiteImage from '../../../assets/images/website.png';
+import NoPriceTagImage from '../../../assets/images/blacksmith_papers.jpeg';
 import styles from '../../../utils/styles';
 import Container from '../../Container.astro';
 import Heading from '../../Heading.astro';
@@ -12,14 +12,14 @@ import * as ReasoningContent from '../../../content/free-websites/reasoning.md';
   <Container>
     <Heading
       title="No Price Tag. But Why?"
-      subtitle="Don't worry about paying. We're more interested in helping you forge your red-hot ideas into profitable business."
+      subtitle="Don't worry about paying. We're more interested in helping you forge your red-hot ideas into great-converting websites."
     />
 
     <div class="flex flex-col md:flex-row flex-wrap gap-8">
-      <div class="flex-1 md:max-w-[40%]">
+      <div class="flex-1">
         <Image
-          src={WebsiteImage}
-          alt="A website image from Modiggo"
+          src={NoPriceTagImage}
+          alt="A no price tag image for Modiggo free websites"
           class="sticky top-10 rounded-md overflow-hidden"
           width={600}
           height={600}

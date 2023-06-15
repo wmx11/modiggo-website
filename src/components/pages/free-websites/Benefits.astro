@@ -12,18 +12,18 @@ import * as BenefitsContent from '../../../content/free-websites/benefits.md';
   <Container>
     <Heading
       title="A Well-Crafted Website"
-      subtitle="Is fast, trustworthy, SEO-optimized, mobile-friendly, and great-converting."
+      subtitle="Fast, trustworthy, SEO-optimized, mobile-friendly, and great-converting."
     />
     <div class="flex flex-col md:flex-row flex-wrap gap-8">
       <div
         class="flex-1 text-lg"
         set:html={BenefitsContent.compiledContent()}
       />
-      <div class="flex-1 md:max-w-[40%]">
+      <div class="flex-1">
         <Image
           src={WebsiteImage}
-          alt="A website image from Modiggo"
-          class="sticky top-10 rounded-md overflow-hidden"
+          alt="A performant and optimized website built by Modiggo"
+          class="sticky top-10 rounded-md overflow-hidden md:ml-auto md:mr-0"
           width={600}
           height={600}
         />
