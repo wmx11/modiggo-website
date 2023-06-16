@@ -8,7 +8,7 @@ export default defineConfig({
   experimental: {
     assets: true
   },
-  site: 'http://localhost:3000',
+  site: 'https://modiggo.com',
   compressHTML: true,
   integrations: [tailwind(), mdx(), svelte()],
   image: {
