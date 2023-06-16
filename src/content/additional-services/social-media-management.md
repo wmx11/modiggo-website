@@ -1,7 +1,7 @@
 ---
 title: Social Media Management
 price: #
-image: ../assets/images/management.png
+image: "../../assets/images/management.png"
 imageAlt: Modiggo Social Media Management Services
 ---
 

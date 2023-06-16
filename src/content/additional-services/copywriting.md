@@ -1,7 +1,7 @@
 ---
 title: Copywriting
 price: #
-image: ../assets/images/copywriting.png
+image: "../../assets/images/copywriting.png"
 imageAlt: Modiggo Copywriting Services
 ---
 

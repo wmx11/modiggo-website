@@ -1,5 +1,5 @@
 ---
-import { Image } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon';
 import ShopBackground from '../../assets/images/shop_background_3.jpeg';
 import styles from '../../utils/styles';
@@ -46,8 +46,9 @@ import Heading from '../Heading.astro';
         <Image
           src={ShopBackground}
           alt="Modiggo blacksmith shop background image"
-          class="absolute inset-0 transition-all w-full h-full object-cover object-center"
+          class="absolute inset-0 duration-[1s] ease-in-out w-full h-full object-cover object-center"
           id="shop-background"
+          quality={50}
           height={1080}
           width={1600}
         />

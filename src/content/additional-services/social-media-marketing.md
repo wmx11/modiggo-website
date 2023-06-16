@@ -1,7 +1,7 @@
 ---
 title: Social Media Marketing
 price: #
-image: ../assets/images/marketing.png
+image: "../../assets/images/marketing.png"
 imageAlt: Modiggo Social Media Marketing Services
 ---
 

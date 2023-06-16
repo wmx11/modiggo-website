@@ -1,5 +1,6 @@
 ---
-import { Image } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Container from '../components/Container.astro';
 import HaveQuestionsCard from '../components/HaveQuestionsCard.astro';
@@ -8,10 +9,13 @@ import Layout from '../layouts/Layout.astro';
 import config from '../utils/config';
 import styles from '../utils/styles';
 
-const services = await Astro.glob('../content/additional-services/*.md');
+const services = await getCollection('additional-services');
 ---
 
-<Layout title="Modiggo - Additional Services" description="">
+<Layout
+  title="Additional Services"
+  description="You're looking for more than subscription-based web development services. Explore our additional services and let us help you make a digital impact."
+>
   <section class={styles.section}>
     <Container>
       <Breadcrumbs crumbs={[{ label: 'Services' }]} />
@@ -24,25 +28,20 @@ const services = await Astro.glob('../content/additional-services/*.md');
         {
           services?.map((item) => (
             <div class="card basis-[100%] lg:basis-[calc(33.3%-10.2px)] bg-base-100 border">
-              <div class="max-h-[350px] w-full">
-                {item.frontmatter.image ? (
-                  <Image
-                    position="center"
-                    src={
-                      import(/* @vite-ignore */ item?.frontmatter?.image) ?? ''
-                    }
-                    alt={item?.frontmatter?.imageAlt}
-                    height={350}
-                    width={750}
-                  />
-                ) : null}
+              <div class="max-h-[250px] w-full">
+                <Image
+                  src={item?.data?.image}
+                  alt={item?.data?.imageAlt}
+                  quality={50}
+                  height={250}
+                  width={750}
+                  class="w-full h-full object-cover"
+                />
               </div>
               <div class="card-body">
-                <h2 class="card-title">{item?.frontmatter?.title}</h2>
-                <h2 class="card-title text-primary">
-                  {item?.frontmatter?.price}
-                </h2>
-                <p set:html={item?.compiledContent()} />
+                <h2 class="card-title">{item?.data?.title}</h2>
+                <h2 class="card-title text-primary">{item?.data?.price}</h2>
+                <p set:html={item?.body} />
                 <div class="card-actions justify-end">
                   <a
                     href={config.calendarLink}

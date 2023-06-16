@@ -1,5 +1,5 @@
 ---
-import { Image } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
 import NoPriceTagImage from '../../../assets/images/blacksmith_papers.jpeg';
 import styles from '../../../utils/styles';
 import Container from '../../Container.astro';
@@ -21,6 +21,7 @@ import * as ReasoningContent from '../../../content/free-websites/reasoning.md';
           src={NoPriceTagImage}
           alt="A no price tag image for Modiggo free websites"
           class="sticky top-10 rounded-md overflow-hidden"
+          quality={50}
           width={600}
           height={600}
         />

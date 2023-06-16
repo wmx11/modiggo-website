@@ -1,5 +1,5 @@
 ---
-import { Image } from '@astrojs/image/components';
+import { Image } from 'astro:assets';
 import ShopBackground from '../../../assets/images/shop_background_3.jpeg';
 import config from '../../../utils/config';
 import Container from '../../Container.astro';
@@ -24,6 +24,7 @@ import HeroWrapper from '../../HeroWrapper.astro';
       src={ShopBackground}
       alt="A Modiggo digital blacksmith shop"
       class="absolute w-full h-full inset-0 object-cover opacity-40 contrast-[0.7]"
+      quality={50}
       width={1920}
       height={1080}
     />

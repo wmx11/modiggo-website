@@ -1,5 +1,6 @@
 ---
 import { SEO } from 'astro-seo';
+import { GoogleFontsOptimizer } from 'astro-google-fonts-optimizer';
 import Footer from '../components/sections/Footer.astro';
 
 export interface Props {
@@ -21,6 +22,7 @@ const metaImageUrl = `${Astro.url.origin}/${image ?? 'modiggo-meta-image.png'}`;
 	<head>
 		<SEO
 			title={title}
+			titleTemplate="Modiggo - %s"
 			description={description}
 			openGraph={{
 				basic: {
@@ -36,6 +38,9 @@ const metaImageUrl = `${Astro.url.origin}/${image ?? 'modiggo-meta-image.png'}`;
 				site: 'https://modiggo.com',
 				image: metaImageUrl,
 			}}
+		/>
+		<GoogleFontsOptimizer
+			url="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap"
 		/>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -118,67 +123,28 @@ const metaImageUrl = `${Astro.url.origin}/${image ?? 'modiggo-meta-image.png'}`;
 
 		<link rel="icon" type="image/svg+xml" href="/favicon/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		<link
 			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap"
 			rel="stylesheet"
-		/>
+		/> -->
 	</head>
 	<body>
 		<main>
 			<slot />
 			<Footer />
 		</main>
+
 		<script>
-			import { animate, inView, stagger } from 'motion';
-
-			document?.querySelectorAll(`[data-scroll-to]`).forEach((el) => {
-				const element = el as HTMLBaseElement;
-
-				element?.addEventListener('click', () => {
-					const location = window.location.pathname;
-					if (location === '/') {
-						document
-							?.querySelector(element?.dataset?.scrollTo as string)
-							?.scrollIntoView({ behavior: 'smooth' });
-						window.history.pushState(
-							{},
-							'',
-							element?.dataset?.scrollTo as string
-						);
-					} else {
-						window.location.replace(`/${element?.dataset?.scrollTo as string}`);
-					}
-				});
-			});
-
-			inView(
-				'section',
-				(info) => {
-					animate(
-						info.target.querySelectorAll('.animate'),
-						{
-							opacity: [0, 1],
-							transform: ['translateY(-50px) rotate(2deg)', 'translateY(0px)'],
-						},
-						{
-							duration: 0.5,
-							delay: stagger(0.1),
-						}
-					);
-				},
-				{ margin: '-25%' }
-			);
+			import '../scripts/baseAnimation';
+			import '../scripts/scrollTo';
 		</script>
 
 		<style is:global>
-			:root {
-			}
-
 			html {
 				color: #0c0c19;
-				font-family: 'Montserrat', sans-serif;
+				/* font-family: 'Montserrat', sans-serif; */
 			}
 
 			.pattern {

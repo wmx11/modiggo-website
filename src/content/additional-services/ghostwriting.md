@@ -1,7 +1,7 @@
 ---
 title: Twitter Ghostwriting
 price: #
-image: ../assets/images/ghostwriting.png
+image: "../../assets/images/ghostwriting.png"
 imageAlt: Modiggo Twitter Ghostwriting Services
 ---
 
