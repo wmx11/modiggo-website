@@ -26,13 +26,13 @@ const metaImageUrl = `${Astro.url.origin}/${image ?? 'modiggo-meta-image.png'}`;
 			description={description}
 			openGraph={{
 				basic: {
-					title,
+					title: `Modiggo - ${title}`,
 					type: 'website',
 					image: metaImageUrl,
 				},
 			}}
 			twitter={{
-				title,
+				title: `Modiggo - ${title}`,
 				description,
 				creator: '@vaynemyko',
 				site: 'https://modiggo.com',
