@@ -2,7 +2,7 @@
 import Container from '../Container.astro';
 import Pattern from '../Pattern.astro';
 import { Image } from 'astro:assets';
-import ModiggoLogo from '../../assets/images/modiggo_logo.svg';
+import ModiggoLogo from '../../assets/images/modiggo_logo.png';
 import { Icon } from 'astro-icon';
 ---
 
@@ -10,7 +10,7 @@ import { Icon } from 'astro-icon';
   <Container className="footer z-10 relative">
     <div>
       <a href="/" class="flex items-center gap-4 mb-8">
-        <img src={ModiggoLogo} alt="Modiggo Logo" height={50} width={50} />
+        <Image src={ModiggoLogo} alt="Modiggo Logo" height={50} width={50} />
         <span class="text-3xl font-bold">Modiggo</span>
       </a>
       <div>
