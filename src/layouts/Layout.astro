@@ -9,8 +9,6 @@ export interface Props {
 	image?: string;
 }
 
-const googleAnalyticsId = import.meta.env.GTAG ?? '';
-
 const defaultDescription =
 	'Subscription-based web development services. No more full-time commitments, no more hiring headaches. Choose a partnership plan. Pause or cancel anytime.';
 
@@ -129,15 +127,14 @@ const metaImageUrl = `${Astro.url.origin}/${image ?? 'modiggo-meta-image.png'}`;
 		<script
 			async
 			type="text/partytown"
-			src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
-		></script>
+			src="https://www.googletagmanager.com/gtag/js?id=G-9GBPDH9M47"></script>
 		<script type="text/partytown">
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
 				dataLayer.push(arguments);
 			}
 			gtag('js', new Date());
-			gtag('config', googleAnalyticsId);
+			gtag('config', 'G-9GBPDH9M47');
 		</script>
 	</head>
 	<body>
