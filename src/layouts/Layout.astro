@@ -9,6 +9,8 @@ export interface Props {
 	image?: string;
 }
 
+const googleAnalyticsId = import.meta.env.GTAG ?? '';
+
 const defaultDescription =
 	'Subscription-based web development services. No more full-time commitments, no more hiring headaches. Choose a partnership plan. Pause or cancel anytime.';
 
@@ -123,12 +125,20 @@ const metaImageUrl = `${Astro.url.origin}/${image ?? 'modiggo-meta-image.png'}`;
 
 		<link rel="icon" type="image/svg+xml" href="/favicon/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap"
-			rel="stylesheet"
-		/> -->
+		<!-- Google tag (gtag.js) -->
+		<script
+			async
+			type="text/partytown"
+			src={`https://www.googletagmanager.com/gtag/js?id=${googleAnalyticsId}`}
+		></script>
+		<script type="text/partytown">
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag('js', new Date());
+			gtag('config', googleAnalyticsId);
+		</script>
 	</head>
 	<body>
 		<main>
