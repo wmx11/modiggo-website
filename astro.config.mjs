@@ -1,8 +1,9 @@
-import { defineConfig, sharpImageService } from 'astro/config';
-import tailwind from "@astrojs/tailwind";
 import mdx from "@astrojs/mdx";
-import svelte from "@astrojs/svelte";
 import partytown from "@astrojs/partytown";
+import svelte from "@astrojs/svelte";
+import tailwind from "@astrojs/tailwind";
+import robotsTxt from "astro-robots-txt";
+import { defineConfig, sharpImageService } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
@@ -11,9 +12,13 @@ export default defineConfig({
   },
   site: 'https://modiggo.com',
   compressHTML: true,
-  integrations: [tailwind(), mdx(), svelte(), partytown({ config: { forward:["dataLayer.push"] }})],
+  integrations: [tailwind(), mdx(), svelte(), partytown({
+    config: {
+      forward: ["dataLayer.push"]
+    }
+  }), robotsTxt()],
   image: {
-    service: sharpImageService(),
+    service: sharpImageService()
   },
   build: {
     inlineStylesheets: 'auto'
