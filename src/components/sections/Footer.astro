@@ -9,21 +9,10 @@ import { Icon } from 'astro-icon';
 <footer class="p-10 bg-black text-white min-h-[420px] relative">
   <Container className="footer z-10 relative">
     <div>
-      <a href="/" class="flex items-center gap-4 mb-8">
+      <a href="/" class="flex items-center gap-4 mb-2">
         <Image src={ModiggoLogo} alt="Modiggo Logo" height={50} width={50} />
         <span class="text-3xl font-bold">Modiggo</span>
       </a>
-      <div>
-        <span class="footer-title block">Social Media</span>
-        <a
-          href="https://twitter.com/modiggo"
-          target="_blank"
-          class="link link-hover flex items-center gap-2"
-        >
-          <Icon name="mdi:twitter" class="text-white w-6" />
-          <span class="text-lg font-bold">Twitter</span>
-        </a>
-      </div>
     </div>
     <div>
       <span class="footer-title">Company</span>
@@ -46,6 +35,17 @@ import { Icon } from 'astro-icon';
       <a class="link link-hover" href="/cookie-policy">Cookie policy</a>
       <a class="link link-hover" href="/privacy-policy">Privacy policy</a>
       <a class="link link-hover" href="/terms-of-services">Terms of services</a>
+    </div>
+    <div>
+      <span class="footer-title block">Social Media</span>
+      <a
+        href="https://twitter.com/modiggo"
+        target="_blank"
+        class="link link-hover flex items-center gap-2"
+      >
+        <Icon name="mdi:twitter" class="text-white w-6" />
+        <span class="">Twitter</span>
+      </a>
     </div>
   </Container>
   <Pattern />

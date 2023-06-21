@@ -123,6 +123,10 @@ const metaImageUrl = `${Astro.url.origin}/${image ?? 'modiggo-meta-image.png'}`;
 
 		<link rel="icon" type="image/svg+xml" href="/favicon/favicon.ico" />
 		<meta name="generator" content={Astro.generator} />
+		<!-- Cookie Consent Banner -->
+		<script
+			src="https://app.termshub.io/2bae6faa-3e7c-413a-b404-599446f7f7bd/termshub-cookie-consent.js"
+			site="Modiggo"></script>
 		<!-- Google tag (gtag.js) -->
 		<script
 			async
@@ -149,9 +153,12 @@ const metaImageUrl = `${Astro.url.origin}/${image ?? 'modiggo-meta-image.png'}`;
 		</script>
 
 		<style is:global>
+			:root {
+				--border-radius: 4px;
+			}
+
 			html {
 				color: #0c0c19;
-				/* font-family: 'Montserrat', sans-serif; */
 			}
 
 			.pattern {
@@ -167,6 +174,12 @@ const metaImageUrl = `${Astro.url.origin}/${image ?? 'modiggo-meta-image.png'}`;
 
 			.animate {
 				opacity: 0;
+			}
+
+			/* Override Terms Hub Cookie Banner styles */
+			.th-button {
+				border-radius: var(--border-radius) !important;
+				margin-bottom: 8px !important;
 			}
 		</style>
 	</body>
