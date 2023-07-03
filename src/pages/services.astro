@@ -5,9 +5,9 @@ import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Container from '../components/Container.astro';
 import HaveQuestionsCard from '../components/HaveQuestionsCard.astro';
 import Heading from '../components/Heading.astro';
+import Section from '../components/Section.astro';
 import Layout from '../layouts/Layout.astro';
 import config from '../utils/config';
-import styles from '../utils/styles';
 
 const services = await getCollection('additional-services');
 ---
@@ -16,7 +16,7 @@ const services = await getCollection('additional-services');
   title="Additional Services"
   description="You're looking for more than subscription-based web development services. Explore our additional services and let us help you make a digital impact."
 >
-  <section class={styles.section}>
+  <Section>
     <Container>
       <Breadcrumbs crumbs={[{ label: 'Services' }]} />
       <Heading
@@ -58,5 +58,5 @@ const services = await getCollection('additional-services');
       </div>
       <HaveQuestionsCard />
     </Container>
-  </section>
+  </Section>
 </Layout>

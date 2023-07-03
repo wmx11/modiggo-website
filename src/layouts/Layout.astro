@@ -2,6 +2,8 @@
 import { SEO } from 'astro-seo';
 import { GoogleFontsOptimizer } from 'astro-google-fonts-optimizer';
 import Footer from '../components/sections/Footer.astro';
+import GlobalStyles from '../styles/GlobalStyles.astro';
+import Favicons from './Favicons.astro';
 
 export interface Props {
 	title: string;
@@ -39,89 +41,16 @@ const metaImageUrl = `${Astro.url.origin}/${image ?? 'modiggo-meta-image.png'}`;
 				image: metaImageUrl,
 			}}
 		/>
+
 		<GoogleFontsOptimizer
 			url="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap"
 		/>
+
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link
-			rel="apple-touch-icon"
-			sizes="57x57"
-			href="/favicon/apple-icon-57x57.png"
-		/>
-		<link
-			rel="apple-touch-icon"
-			sizes="60x60"
-			href="/favicon/apple-icon-60x60.png"
-		/>
-		<link
-			rel="apple-touch-icon"
-			sizes="72x72"
-			href="/favicon/apple-icon-72x72.png"
-		/>
-		<link
-			rel="apple-touch-icon"
-			sizes="76x76"
-			href="/favicon/apple-icon-76x76.png"
-		/>
-		<link
-			rel="apple-touch-icon"
-			sizes="114x114"
-			href="/favicon/apple-icon-114x114.png"
-		/>
-		<link
-			rel="apple-touch-icon"
-			sizes="120x120"
-			href="/favicon/apple-icon-120x120.png"
-		/>
-		<link
-			rel="apple-touch-icon"
-			sizes="144x144"
-			href="/favicon/apple-icon-144x144.png"
-		/>
-		<link
-			rel="apple-touch-icon"
-			sizes="152x152"
-			href="/favicon/apple-icon-152x152.png"
-		/>
-		<link
-			rel="apple-touch-icon"
-			sizes="180x180"
-			href="/favicon/apple-icon-180x180.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="192x192"
-			href="/favicon/android-icon-192x192.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="32x32"
-			href="/favicon/favicon-32x32.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="96x96"
-			href="/favicon/favicon-96x96.png"
-		/>
-		<link
-			rel="icon"
-			type="image/png"
-			sizes="16x16"
-			href="/favicon/favicon-16x16.png"
-		/>
-		<link rel="manifest" href="/favicon/manifest.json" />
-		<meta name="msapplication-TileColor" content="#ffffff" />
-		<meta
-			name="msapplication-TileImage"
-			content="/favicon/ms-icon-144x144.png"
-		/>
-		<meta name="theme-color" content="#ffffff" />
 
-		<link rel="icon" type="image/svg+xml" href="/favicon/favicon.ico" />
+		<Favicons />
+
 		<meta name="generator" content={Astro.generator} />
 		<!-- Cookie Consent Banner -->
 		<script
@@ -132,6 +61,7 @@ const metaImageUrl = `${Astro.url.origin}/${image ?? 'modiggo-meta-image.png'}`;
 			async
 			type="text/partytown"
 			src="https://www.googletagmanager.com/gtag/js?id=G-9GBPDH9M47"></script>
+
 		<script type="text/partytown">
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
@@ -142,45 +72,14 @@ const metaImageUrl = `${Astro.url.origin}/${image ?? 'modiggo-meta-image.png'}`;
 		</script>
 	</head>
 	<body>
+		<GlobalStyles />
 		<main>
 			<slot />
 			<Footer />
 		</main>
-
 		<script>
 			import '../scripts/baseAnimation';
 			import '../scripts/scrollTo';
 		</script>
-
-		<style is:global>
-			:root {
-				--border-radius: 4px;
-			}
-
-			html {
-				color: #0c0c19;
-			}
-
-			.pattern {
-				background-color: transparent;
-				opacity: 0.1;
-				background-image: linear-gradient(
-						#ffffff50 0.552px,
-						transparent 0.552px
-					),
-					linear-gradient(to right, #ffffff50 0.552px, transparent 0.552px);
-				background-size: 10px 10px;
-			}
-
-			.animate {
-				opacity: 0;
-			}
-
-			/* Override Terms Hub Cookie Banner styles */
-			.th-button {
-				border-radius: var(--border-radius) !important;
-				margin-bottom: 8px !important;
-			}
-		</style>
 	</body>
 </html>

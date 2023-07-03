@@ -1,8 +1,7 @@
 ---
-import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon';
+import { Image } from 'astro:assets';
 import ShopBackground from '../../assets/images/shop_background_3.jpeg';
-import styles from '../../utils/styles';
 import AccentBlur from '../AccentBlur.astro';
 import Container from '../Container.astro';
 import Pattern from '../Pattern.astro';
@@ -11,6 +10,7 @@ import * as whatWeDo from '../../content/services/what-we-do.md';
 import * as whatWeSolve from '../../content/services/what-we-solve.md';
 import * as whoWeAre from '../../content/services/who-we-are.md';
 import Heading from '../Heading.astro';
+import Section from '../Section.astro';
 ---
 
 <script>
@@ -33,7 +33,7 @@ import Heading from '../Heading.astro';
   );
 </script>
 
-<section class={styles.section} id="scope-of-work">
+<Section id="scope-of-work">
   <Container>
     <Heading
       title="Our Manifesto"
@@ -96,4 +96,4 @@ import Heading from '../Heading.astro';
       </div>
     </div>
   </Container>
-</section>
+</Section>

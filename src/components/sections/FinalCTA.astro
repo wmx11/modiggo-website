@@ -1,12 +1,12 @@
 ---
 import config from '../../utils/config';
-import styles from '../../utils/styles';
 import AccentBlur from '../AccentBlur.astro';
 import Container from '../Container.astro';
 import Pattern from '../Pattern.astro';
+import Section from '../Section.astro';
 ---
 
-<section class={styles.section}>
+<Section>
   <Container>
     <div
       class="card w-full bg-primary py-10 text-white items-center overflow-hidden relative mb-16"
@@ -30,4 +30,4 @@ import Pattern from '../Pattern.astro';
       <AccentBlur />
     </div>
   </Container>
-</section>
+</Section>

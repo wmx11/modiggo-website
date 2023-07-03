@@ -1,7 +1,7 @@
 ---
-import styles from '../../utils/styles';
 import Container from '../Container.astro';
 import Heading from '../Heading.astro';
+import Section from '../Section.astro';
 import TextBlock from '../TextBlock.astro';
 
 const benefits = await Astro.glob('../../content/benefits/*.md');
@@ -10,7 +10,7 @@ benefits.sort(
 );
 ---
 
-<section class={styles.section}>
+<Section className="min-h-screen relative overflow-hidden">
   <Container>
     <Heading
       title="Forging Digital Marvels"
@@ -28,4 +28,4 @@ benefits.sort(
       }
     </div>
   </Container>
-</section>
+</Section>
