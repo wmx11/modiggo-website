@@ -11,6 +11,7 @@ import * as whatWeSolve from '../../content/services/what-we-solve.md';
 import * as whoWeAre from '../../content/services/who-we-are.md';
 import Heading from '../Heading.astro';
 import Section from '../Section.astro';
+import Quote from '../Quote.astro';
 ---
 
 <script>
@@ -41,49 +42,46 @@ import Section from '../Section.astro';
     />
     <div>
       <div
-        class="card h-[320px] mb-16 bg-red-200 relative overflow-hidden z-[-1]"
+        class="card h-[320px] mb-16 relative overflow-hidden bg-primary flex items-center justify-center"
       >
-        <Image
-          src={ShopBackground}
-          alt="Modiggo blacksmith shop background image"
-          class="absolute inset-0 duration-[1s] ease-in-out w-full h-full object-cover object-center"
-          id="shop-background"
-          quality={50}
-          height={1080}
-          width={1600}
+        <Quote
+          quote="Their integrity is one of a kind"
+          author="Rene Grahamar"
         />
         <Pattern />
-        <AccentBlur />
       </div>
       <div class="flex flex-col md:flex-row flex-wrap gap-8 md:gap-16">
         <div class="flex-1 animate">
-          <h2 class="text-3xl mb-5 font-bold">
+          <h2 class="text-3xl font-bold mb-5">
             {whatWeDo?.frontmatter?.title}
           </h2>
-          <div class="mb-5">
-            <div class="text-lg mb-5" set:html={whatWeDo.compiledContent()} />
-          </div>
-          <div class="md:columns-2 lg:columns-3">
-            <ul class="[&>li]:mb-4">
-              {
-                whatWeDo?.frontmatter?.services?.map((item: string) => (
-                  <li class="flex gap-2 items-center">
-                    <Icon name="gg:check-o" class="w-[16px] text-primary" />
-                    <div set:html={item} />
-                  </li>
-                ))
-              }
-            </ul>
+          <div class="text-lg mb-5" set:html={whatWeDo.compiledContent()} />
+
+          <div class="card bg-primary p-4">
+            <div class="md:columns-2 lg:columns-3">
+              <ul class="space-y-4">
+                {
+                  whatWeDo?.frontmatter?.services?.map((item: string) => (
+                    <li class="flex gap-2 items-center">
+                      <Icon name="gg:check-o" class="w-[16px] text-white" />
+                      <div set:html={item} />
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+            <Pattern />
           </div>
         </div>
-        <div class="flex-1">
-          <div class="mb-8 animate">
+
+        <div class="flex-1 space-y-24">
+          <div class="animate">
             <h2 class="text-3xl mb-5 font-bold">
               {whoWeAre?.frontmatter?.title}
             </h2>
             <div class="text-lg mb-5" set:html={whoWeAre.compiledContent()} />
           </div>
-          <div class="mb-8 animate">
+          <div class="animate">
             <h2 class="text-3xl mb-5 font-bold">
               {whatWeSolve?.frontmatter?.title}
             </h2>

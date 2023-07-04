@@ -19,7 +19,7 @@ const sortedFaq = faq
     <div>
       {
         sortedFaq?.map((item) => (
-          <div class="collapse collapse-arrow border-b border-white mb-2">
+          <div class="collapse collapse-arrow border-b hover:border-white border-zinc-500 transition-colors mb-2">
             <input type="radio" name="accordion" />
             <div class="collapse-title text-xl font-medium">
               {item.frontmatter.title}

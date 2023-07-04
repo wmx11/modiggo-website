@@ -51,13 +51,16 @@
   <div
     class="tabs tabs-boxed bg-primary lg:min-w-[calc(360px)] lg:max-w-[calc(360px)] justify-between"
   >
-    <button class="tab tab-lg tab-active" on:click={handleTabClick(MONTH)}
-      >Monthly</button
+    <button
+      class="tab tab-lg text-white tab-active"
+      on:click={handleTabClick(MONTH)}>Monthly</button
     >
-    <button class="tab tab-lg" on:click={handleTabClick(QUARTER)}
+    <button class="tab tab-lg text-white" on:click={handleTabClick(QUARTER)}
       >Quarterly</button
     >
-    <button class="tab tab-lg" on:click={handleTabClick(YEAR)}>Annually</button>
+    <button class="tab tab-lg text-white" on:click={handleTabClick(YEAR)}
+      >Annually</button
+    >
   </div>
 </div>
 <div class="flex flex-wrap gap-4 mb-4 justify-between z-10 relative">

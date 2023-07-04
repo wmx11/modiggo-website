@@ -14,18 +14,20 @@ benefits.sort(
   <Container>
     <Heading
       title="Forging Digital Marvels"
-      subtitle="We mold your digital presence with precision and expertise. Let's hammer out those red-hot ideas."
+      subtitle="We mold your digital presence with precision and expertise."
     />
-    <div class="flex flex-wrap items-center justify-between gap-16">
-      {
-        benefits?.map((item) => (
-          <TextBlock
-            className="md:basis-[calc(33.3%-64px)] animate"
-            {...item.frontmatter}
-            description={item.compiledContent()}
-          />
-        ))
-      }
+    <div class="space-y-32">
+      <div class="flex flex-wrap items-center justify-between gap-16">
+        {
+          benefits?.map((item) => (
+            <TextBlock
+              className="md:basis-[calc(33.3%-64px)] animate"
+              {...item.frontmatter}
+              description={item.compiledContent()}
+            />
+          ))
+        }
+      </div>
     </div>
   </Container>
 </Section>
