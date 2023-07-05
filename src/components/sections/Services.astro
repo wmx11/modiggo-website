@@ -12,6 +12,7 @@ import * as whoWeAre from '../../content/services/who-we-are.md';
 import Heading from '../Heading.astro';
 import Section from '../Section.astro';
 import Quote from '../Quote.astro';
+import QuoteCard from '../QuoteCard.astro';
 ---
 
 <script>
@@ -41,15 +42,7 @@ import Quote from '../Quote.astro';
       subtitle="Forging digital equipment for your business. See how we can help you."
     />
     <div>
-      <div
-        class="card h-[320px] mb-16 relative overflow-hidden bg-primary flex items-center justify-center"
-      >
-        <Quote
-          quote="Their integrity is one of a kind"
-          author="Rene Grahamar"
-        />
-        <Pattern />
-      </div>
+      <QuoteCard quote="This is a test quote" author="Test Author" size="lg" />
       <div class="flex flex-col md:flex-row flex-wrap gap-8 md:gap-16">
         <div class="flex-1 animate">
           <h2 class="text-3xl font-bold mb-5">
@@ -62,7 +55,7 @@ import Quote from '../Quote.astro';
               <ul class="space-y-4">
                 {
                   whatWeDo?.frontmatter?.services?.map((item: string) => (
-                    <li class="flex gap-2 items-center">
+                    <li class="flex gap-2 items-center z-10 relative">
                       <Icon name="gg:check-o" class="w-[16px] text-white" />
                       <div set:html={item} />
                     </li>
@@ -74,7 +67,7 @@ import Quote from '../Quote.astro';
           </div>
         </div>
 
-        <div class="flex-1 space-y-24">
+        <div class="flex-1 space-y-12">
           <div class="animate">
             <h2 class="text-3xl mb-5 font-bold">
               {whoWeAre?.frontmatter?.title}

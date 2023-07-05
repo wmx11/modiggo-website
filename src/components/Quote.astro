@@ -7,7 +7,7 @@ interface Props {
 const { quote, author } = Astro.props;
 ---
 
-<div class="text-center text-3xl space-y-4">
-  <p>"{quote}"</p>
-  <p>- {author}</p>
+<div class="text-center space-y-4 z-10">
+  <p class="text-3xl">"{quote}"</p>
+  <p class="text-xl">- {author}</p>
 </div>

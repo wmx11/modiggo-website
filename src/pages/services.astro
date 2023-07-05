@@ -27,7 +27,7 @@ const services = await getCollection('additional-services');
       <div class="flex flex-wrap gap-4 mb-4">
         {
           services?.map((item) => (
-            <div class="card basis-[100%] lg:basis-[calc(33.3%-10.2px)] bg-base-100 border">
+            <div class="card basis-[100%] lg:basis-[calc(33.3%-10.2px)] bg-primary border-2 border-primary">
               <div class="max-h-[250px] w-full">
                 <Image
                   src={item?.data?.image}
@@ -40,7 +40,7 @@ const services = await getCollection('additional-services');
               </div>
               <div class="card-body">
                 <h2 class="card-title">{item?.data?.title}</h2>
-                <h2 class="card-title text-primary">{item?.data?.price}</h2>
+                <h2 class="card-title underline">{item?.data?.price}</h2>
                 <p set:html={item?.body} />
                 <div class="card-actions justify-end">
                   <a

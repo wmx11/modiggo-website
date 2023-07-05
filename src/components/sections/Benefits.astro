@@ -1,8 +1,11 @@
 ---
 import Container from '../Container.astro';
 import Heading from '../Heading.astro';
+import QuoteCard from '../QuoteCard.astro';
 import Section from '../Section.astro';
 import TextBlock from '../TextBlock.astro';
+import DomuFinancePage from '../../assets/images/domu-finance-page-sample.png';
+import { Image } from 'astro:assets';
 
 const benefits = await Astro.glob('../../content/benefits/*.md');
 benefits.sort(
@@ -16,7 +19,7 @@ benefits.sort(
       title="Forging Digital Marvels"
       subtitle="We mold your digital presence with precision and expertise."
     />
-    <div class="space-y-32">
+    <div class="space-y-24">
       <div class="flex flex-wrap items-center justify-between gap-16">
         {
           benefits?.map((item) => (
@@ -28,6 +31,46 @@ benefits.sort(
           ))
         }
       </div>
+
+      <div class="flex flex-wrap gap-8">
+        <Image
+          class=""
+          src={DomuFinancePage}
+          alt="Domu Finance Page"
+          width={400}
+          height={400}
+        />
+        <Image
+          class=""
+          src={DomuFinancePage}
+          alt="Domu Finance Page"
+          width={400}
+          height={400}
+        />
+        <Image
+          class=""
+          src={DomuFinancePage}
+          alt="Domu Finance Page"
+          width={400}
+          height={400}
+        />
+        <Image
+          class=""
+          src={DomuFinancePage}
+          alt="Domu Finance Page"
+          width={400}
+          height={400}
+        />
+        <Image
+          class=""
+          src={DomuFinancePage}
+          alt="Domu Finance Page"
+          width={400}
+          height={400}
+        />
+      </div>
+
+      <QuoteCard quote="Test quote" author="Test Author" />
     </div>
   </Container>
 </Section>
