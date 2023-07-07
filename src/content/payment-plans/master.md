@@ -1,7 +1,7 @@
 ---
 order: 3
 label: Master
-labelDescription: When you have medium-high complexity requests, requirements, and a consistent workload.
+labelDescription: When you have medium-high complexity requests, requirements, and a consistent workload. More suited for SaaS, Web3 applications, e-commerce solutions, and complex web apps.
 price: 9999
 priceDescription: Pause or cancel anytime. <br/> <strong>3 months of ~12 hours/month (valued $3,240) free support & maintenance after termination.</strong>
 paymentLink:
@@ -16,7 +16,7 @@ included:
     'Free refinement calls',
     'Free bugfixes',
     '~125 hours/month availability',
-    'Priority support',
+    'Priority & additional support',
     'Unlimited reviews',
     'One request at a time',
     'Pause or cancel anytime',

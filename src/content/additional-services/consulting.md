@@ -1,5 +1,5 @@
 ---
-title: "Branding"
+title: "Consulting"
 price: ""
 image: "../../assets/images/branding.png"
 imageAlt: "Modiggo Branding Services"

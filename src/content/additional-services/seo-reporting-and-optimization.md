@@ -1,5 +1,5 @@
 ---
-title: Social Media Management
+title: SEO Reporting and Optimization
 price: #
 image: "../../assets/images/management.png"
 imageAlt: Modiggo Social Media Management Services

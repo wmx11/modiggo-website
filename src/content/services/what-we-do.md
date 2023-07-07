@@ -12,6 +12,7 @@ services:
     'SaaS Development',
     'Integrations',
     'Consulting',
+    'Coaching',
     'Automation',
     'Web Hosting',
     'Database Hosting',

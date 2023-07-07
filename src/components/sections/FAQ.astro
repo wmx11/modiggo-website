@@ -7,7 +7,8 @@ const faq = await Astro.glob('../../content/faq/*.md');
 const sortedFaq = faq
   .map((item) => ({ content: item, length: item?.frontmatter?.title?.length }))
   .sort((a, b) => a?.length - b?.length)
-  .map((sorted) => sorted?.content);
+  .map((sorted) => sorted?.content)
+  .filter((faq) => !faq.frontmatter.draft);
 ---
 
 <Section id="faq">

@@ -1,5 +1,5 @@
 ---
-title: Twitter Ghostwriting
+title: Coaching
 price: #
 image: "../../assets/images/ghostwriting.png"
 imageAlt: Modiggo Twitter Ghostwriting Services

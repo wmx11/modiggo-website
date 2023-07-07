@@ -1,5 +1,5 @@
 ---
-title: Copywriting
+title: Website and Database Hosting
 price: #
 image: "../../assets/images/copywriting.png"
 imageAlt: Modiggo Copywriting Services

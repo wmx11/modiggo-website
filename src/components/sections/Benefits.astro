@@ -13,7 +13,7 @@ benefits.sort(
 );
 ---
 
-<Section className="min-h-screen relative overflow-hidden">
+<Section className="min-h-screen relative">
   <Container>
     <Heading
       title="Forging Digital Marvels"
@@ -32,45 +32,51 @@ benefits.sort(
         }
       </div>
 
-      <div class="flex flex-wrap gap-8">
-        <Image
-          class=""
-          src={DomuFinancePage}
-          alt="Domu Finance Page"
-          width={400}
-          height={400}
-        />
-        <Image
-          class=""
-          src={DomuFinancePage}
-          alt="Domu Finance Page"
-          width={400}
-          height={400}
-        />
-        <Image
-          class=""
-          src={DomuFinancePage}
-          alt="Domu Finance Page"
-          width={400}
-          height={400}
-        />
-        <Image
-          class=""
-          src={DomuFinancePage}
-          alt="Domu Finance Page"
-          width={400}
-          height={400}
-        />
-        <Image
-          class=""
-          src={DomuFinancePage}
-          alt="Domu Finance Page"
-          width={400}
-          height={400}
-        />
+      <div class="flex flex-col md:flex-row gap-8">
+        <div
+          class="basis-[60%] flex flex-wrap gap-8 justify-center md:justify-start"
+        >
+          <div class="break-inside-avoid animate digital--box">
+            <Image
+              src={DomuFinancePage}
+              alt="Domu Finance Page"
+              width={400}
+              height={400}
+            />
+          </div>
+          <div class="break-inside-avoid animate digital--box">
+            <Image
+              src={DomuFinancePage}
+              alt="Domu Finance Page"
+              width={400}
+              height={400}
+            />
+          </div>
+          <div class="break-inside-avoid animate digital--box">
+            <Image
+              src={DomuFinancePage}
+              alt="Domu Finance Page"
+              width={400}
+              height={400}
+            />
+          </div>
+          <div class="break-inside-avoid animate digital--box">
+            <Image
+              src={DomuFinancePage}
+              alt="Domu Finance Page"
+              width={400}
+              height={400}
+            />
+          </div>
+        </div>
+        <div class="basis-[40%] animate">
+          <div class="sticky top-10">
+            <QuoteCard quote="Test quote" author="Test Author 1" />
+            <QuoteCard quote="Test quote" author="Test Author 2" />
+            <QuoteCard quote="Test quote" author="Test Author 3" />
+          </div>
+        </div>
       </div>
-
-      <QuoteCard quote="Test quote" author="Test Author" />
     </div>
   </Container>
 </Section>

@@ -3,11 +3,11 @@ order: 4
 label: Custom
 labelDescription: When you’re not sure about the complexity of your requests, requirements, time constraints, and workload.
 price: 0
-priceDescription: Pause or cancel anytime. <br/> <strong>3 months free support & maintenance after termination.</strong>
+priceDescription: Pause or cancel anytime. <br/> <strong>Custom support & maintenance after termination.</strong>
 paymentLink: ''
 included:
   [
-    'Free consultation calls up to 2 hours/month',
+    'Free consultation calls',
     'Custom hours of availability',
     'Free bugfixes',
     'Development & custom work',
