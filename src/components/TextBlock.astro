@@ -14,7 +14,7 @@ const { title, description, iconName, iconClassName, className } = Astro.props;
 ---
 
 <div class={twMerge('z-10', className)}>
-  <div>
+  <div class="h-[40px]">
     {
       iconName ? (
         <Icon name={iconName} class={twMerge('mb-4', iconClassName)} />

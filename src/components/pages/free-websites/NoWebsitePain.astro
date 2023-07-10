@@ -1,29 +1,26 @@
 ---
 import config from '../../../utils/config';
-import styles from '../../../utils/styles';
 import AccentBlur from '../../AccentBlur.astro';
 import Container from '../../Container.astro';
 import Heading from '../../Heading.astro';
 import Pattern from '../../Pattern.astro';
+import Section from '../../Section.astro';
 ---
 
-<section class={`${styles.section} bg-black relative overflow-hidden`}>
-  <Container className="text-white">
+<Section className="bg-primary relative overflow-hidden">
+  <Container>
     <Heading
-      className="text-white relative z-10"
+      className="text-center text-white relative z-10 mb-0"
       title="You're Missing Out By Not Having a Website"
       subtitle="Without a professional website you're 75% less likely to succeed."
-    />
-
-    <div>
+    >
       <a
         href={config.freeWebsiteApplicationLink}
         target="_blank"
-        class="btn btn-primary btn-lg z-10 relative text-white"
-        >Let's forge your free website. Apply Now.</a
+        class="btn btn-neutral btn-lg z-10 relative text-white">Apply now</a
       >
-    </div>
+    </Heading>
   </Container>
   <AccentBlur />
   <Pattern />
-</section>
+</Section>

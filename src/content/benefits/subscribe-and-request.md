@@ -1,7 +1,7 @@
 ---
 iconName: mdi:email-fast
 iconClassName: max-w-[35px] w-full
-title: Partner Up & Request
+title: Subscribe & Request
 ---
 
-Become our partner by subscribing to one of our plans and start placing requests.
+Subscribe to one of our plans and become our partner. Place requests. Pause or cancel anytime. No more expensive full-time commitment.

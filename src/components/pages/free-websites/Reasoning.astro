@@ -1,14 +1,14 @@
 ---
 import { Image } from 'astro:assets';
 import NoPriceTagImage from '../../../assets/images/blacksmith_papers.jpeg';
-import styles from '../../../utils/styles';
 import Container from '../../Container.astro';
 import Heading from '../../Heading.astro';
 
 import * as ReasoningContent from '../../../content/free-websites/reasoning.md';
+import Section from '../../Section.astro';
 ---
 
-<section class={styles.section}>
+<Section>
   <Container>
     <Heading
       title="No Price Tag. But Why?"
@@ -32,4 +32,4 @@ import * as ReasoningContent from '../../../content/free-websites/reasoning.md';
       />
     </div>
   </Container>
-</section>
+</Section>
