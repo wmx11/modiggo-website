@@ -1,8 +1,8 @@
 ---
 title: SEO Reporting and Optimization
-price: #
-image: "../../assets/images/management.png"
+price: From $250/month
+image: #
 imageAlt: Modiggo Social Media Management Services
 ---
 
-Managing your social media for business can be stressful. You need to spend time creating strategies and scheduling content. We can take on the workload for you by running your social media accounts.
+SEO (Search Engine Optimization) is an important tool when it comes to getting organic traffic. Your website has to be SEO-optimized to rank highly on search engines. We will take care of the SEO headaches and provide you with biweekly performance reports.

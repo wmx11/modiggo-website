@@ -5,7 +5,7 @@ const additionalServicesConfig = defineCollection({
     z.object({
       title: z.string(),
       price: z.string().optional().or(z.null()),
-      image: image(),
+      // image: image(),
       imageAlt: z.string(),
     }),
 });

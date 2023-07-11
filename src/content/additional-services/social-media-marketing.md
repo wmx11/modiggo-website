@@ -1,7 +1,7 @@
 ---
 title: Social Media Marketing
-price: #
-image: "../../assets/images/marketing.png"
+price: From $250/month
+image: #
 imageAlt: Modiggo Social Media Marketing Services
 ---
 

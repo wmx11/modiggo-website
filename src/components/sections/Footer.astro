@@ -1,18 +1,16 @@
 ---
 import { Icon } from 'astro-icon';
-import { Image } from 'astro:assets';
-import ModiggoLogo from '../../assets/images/modiggo_logo.png';
 import config from '../../utils/config';
 import Container from '../Container.astro';
+import LogoGroup from '../LogoGroup.astro';
 import Pattern from '../Pattern.astro';
 ---
 
 <footer class="p-10 text-white min-h-[420px] relative">
   <Container className="footer z-10 relative">
     <div class="space-y-4">
-      <a href="/" class="flex items-center gap-4 mb-2">
-        <Image src={ModiggoLogo} alt="Modiggo Logo" height={50} width={50} />
-        <span class="text-3xl font-bold">Modiggo</span>
+      <a href="/">
+        <LogoGroup />
       </a>
       <div>
         <span class="block footer-title">Email</span>

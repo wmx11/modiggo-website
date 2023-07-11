@@ -1,10 +1,16 @@
 ---
 import AccentBlur from './AccentBlur.astro';
+import LogoGroup from './LogoGroup.astro';
 ---
 
 <div
-  class="bg-black min-h-screen relative overflow-hidden flex items-center justify-center"
+  class="bg-black min-h-screen relative overflow-hidden flex items-center justify-center flex-col"
 >
+  <div class="z-10 absolute top-[64px]">
+    <a href="/">
+      <LogoGroup />
+    </a>
+  </div>
   <slot />
   <AccentBlur />
 </div>
