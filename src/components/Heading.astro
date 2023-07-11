@@ -10,9 +10,10 @@ interface Props {
 const { title, subtitle, className } = Astro.props;
 ---
 
-<div class={twMerge('text-black mb-16 animate', className)}>
-  <h1 class="text-5xl font-bold mb-5">{title}</h1>
-  <h2 class="mb-5 text-2xl">
+<div class={twMerge('mb-16 space-y-6 animate', className)}>
+  <h1 class="text-4xl md:text-7xl font-bold uppercase">{title}</h1>
+  <h2 class="text-2xl">
     {subtitle}
   </h2>
+  <slot />
 </div>

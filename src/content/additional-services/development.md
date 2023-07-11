@@ -1,7 +1,7 @@
 ---
 title: Development
 price: $75/hour
-image: "../../assets/images/hero_background.png"
+image: #
 imageAlt: Modiggo Web Development Services
 ---
 

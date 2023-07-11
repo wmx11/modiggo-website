@@ -7,10 +7,10 @@ inView(
       info.target.querySelectorAll('.animate'),
       {
         opacity: [0, 1],
-        transform: ['translateY(-60px) rotate(2deg)', 'translateY(0px)'],
+        transform: ['translateY(-100px)', 'translateY(0px)'],
       },
       {
-        duration: 0.5,
+        duration: 0.8,
         delay: stagger(0.1),
       }
     );

@@ -1,5 +1,6 @@
 ---
 title: Do you hire?
+draft: true
 ---
 
 Modiggo is a one-person web development agency. We are your digital blacksmith; you come in with a request, and we forge you the digital piece.

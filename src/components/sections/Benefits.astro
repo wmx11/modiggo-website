@@ -1,8 +1,11 @@
 ---
-import styles from '../../utils/styles';
 import Container from '../Container.astro';
 import Heading from '../Heading.astro';
+import QuoteCard from '../QuoteCard.astro';
+import Section from '../Section.astro';
 import TextBlock from '../TextBlock.astro';
+import DomuFinancePage from '../../assets/images/domu-finance-page-sample.png';
+import { Image } from 'astro:assets';
 
 const benefits = await Astro.glob('../../content/benefits/*.md');
 benefits.sort(
@@ -10,22 +13,45 @@ benefits.sort(
 );
 ---
 
-<section class={styles.section}>
+<Section className="min-h-screen relative">
   <Container>
     <Heading
       title="Forging Digital Marvels"
-      subtitle="We mold your digital presence with precision and expertise. Let's hammer out those red-hot ideas."
+      subtitle="We mold your digital presence with precision and expertise."
     />
-    <div class="flex flex-wrap items-center justify-between gap-16">
-      {
-        benefits?.map((item) => (
-          <TextBlock
-            className="md:basis-[calc(33.3%-64px)] animate"
-            {...item.frontmatter}
-            description={item.compiledContent()}
-          />
-        ))
-      }
+    <div class="space-y-24">
+      <div class="flex flex-wrap items-start justify-between gap-16">
+        {
+          benefits?.map((item) => (
+            <TextBlock
+              className="md:basis-[calc(33.3%-64px)] animate"
+              {...item.frontmatter}
+              description={item.compiledContent()}
+            />
+          ))
+        }
+      </div>
+
+      <div class="flex flex-col md:flex-row gap-8 justify-between">
+        <div class="flex flex-wrap gap-8 flex-1">
+          <div class="break-inside-avoid animate digital--box">
+            <Image
+              src={DomuFinancePage}
+              alt="Domu Finance Page"
+              width={400}
+              height={400}
+            />
+          </div>
+        </div>
+        <div class="flex-1 animate">
+          <div class="sticky top-10">
+            <QuoteCard
+              quote="Working with Modiggo was such a fantastic experience!"
+              author="Rene"
+            />
+          </div>
+        </div>
+      </div>
     </div>
   </Container>
-</section>
+</Section>

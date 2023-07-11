@@ -2,22 +2,22 @@
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Container from '../components/Container.astro';
 import Heading from '../components/Heading.astro';
-import styles from '../utils/styles';
+import Section from '../components/Section.astro';
 import Layout from './Layout.astro';
 
 const { frontmatter } = Astro.props;
 ---
 
 <Layout title={frontmatter.title}>
-  <section class={styles.section}>
+  <Section>
     <Container className="flex flex-col items-center">
       <div>
         <Breadcrumbs crumbs={[{ label: frontmatter?.title }]} />
         <Heading title={frontmatter.title} subtitle={frontmatter.subtitle} />
-        <div class="prose prose-lg max-w-3xl">
+        <div class="prose-invert prose-lg max-w-3xl">
           <slot />
         </div>
       </div>
     </Container>
-  </section>
+  </Section>
 </Layout>

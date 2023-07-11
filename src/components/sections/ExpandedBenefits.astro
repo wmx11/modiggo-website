@@ -1,25 +1,23 @@
 ---
-import styles from '../../utils/styles';
 import AccentBlur from '../AccentBlur.astro';
 import Container from '../Container.astro';
 import Heading from '../Heading.astro';
 import Pattern from '../Pattern.astro';
+import Section from '../Section.astro';
 import TextBlock from '../TextBlock.astro';
 
 const benefits = await Astro.glob('../../content/main-benefits/*.md');
 benefits.sort(
-  (a, b) => a.frontmatter.title.length - b.frontmatter.title.length
+  (a, b) => a.compiledContent().length - b.compiledContent().length
 );
 ---
 
-<section
-  class={`${styles.section} min-h-screen bg-black relative overflow-hidden`}
->
+<Section className="min-h-screen bg-primary relative overflow-hidden">
   <Container>
     <Heading
-      className="text-white relative z-10"
+      className="relative z-10"
       title="We Take Pride in Our Craft"
-      subtitle="We forge sleek designs and temper robust functionalities. Your websites and applications will be infused with the perfect balance of style and substance."
+      subtitle="We forge sleek designs and temper robust functionalities. Your applications will be infused with the perfect balance of style and substance."
     />
     <div class="flex flex-wrap justify-between gap-16 text-white">
       {
@@ -35,4 +33,4 @@ benefits.sort(
   </Container>
   <AccentBlur />
   <Pattern />
-</section>
+</Section>

@@ -4,10 +4,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#746ED4',
-        secondary: '#E82BB4',
-        tertiary: '#7BE4DF',
-        black: '#0C0C19',
+        primary: 'hsl(var(--primary))',
+        secondary: 'hsl(var(--secondary))',
+        tertiary: 'hsl(var(--tertiary))',
+        black: 'hsl(var(--black))',
       },
     },
   },
@@ -17,10 +17,10 @@ module.exports = {
       {
         light: {
           ...require('daisyui/src/theming/themes')['[data-theme=light]'],
-          primary: '#746ED4',
-          secondary: '#E82BB4',
-          accent: '#7BE4DF',
-          neutral: '#0C0C19',
+          primary: 'var(--primary)',
+          secondary: 'var(--secondary)',
+          accent: 'var(--tertiary)',
+          neutral: 'var(--black)',
           'base-100': '#ffffff',
           info: '#3abff8',
           success: '#36d399',
@@ -29,6 +29,13 @@ module.exports = {
           '--rounded-btn': 'var(--border-radius)',
           '--rounded-box': 'var(--border-radius)',
           '--tab-radius': '0',
+          '--p': 'var(--primary)',
+          '--s': 'var(--secondary)',
+          '--a': 'var(--tertiary)',
+          '--n': 'var(--black)',
+          '.tab-active': {
+            'background-color': 'hsl(var(--black)) !important',
+          },
         },
       },
     ],

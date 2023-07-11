@@ -1,28 +1,28 @@
 ---
 import config from '../../utils/config';
-import styles from '../../utils/styles';
 import AccentBlur from '../AccentBlur.astro';
 import Container from '../Container.astro';
 import Pattern from '../Pattern.astro';
+import Section from '../Section.astro';
 ---
 
-<section class={styles.section}>
+<Section>
   <Container>
     <div
       class="card w-full bg-primary py-10 text-white items-center overflow-hidden relative mb-16"
     >
-      <div class="card-body w-full max-w-2xl gap-4 z-10 animate">
-        <h2 class="card-title text-5xl mb-5 font-bold">
+      <div class="card-body w-full max-w-2xl space-y-5 z-10">
+        <h2 class="card-title text-5xl font-bold animate">
           See if we are the right fit for you!
         </h2>
-        <p class="mb-5">
+        <p class="animate">
           Get a tour through our digital blacksmith shop. Find out how we can
           help you and your team change the way you see web development.
         </p>
         <a
           href={config.calendarLink}
           target="_blank"
-          class="btn btn-outline btn-block btn-lg font-bold text-white border-2"
+          class="btn btn-neutral btn-block btn-lg font-bold text-white border-2 animate"
           >Get Started</a
         >
       </div>
@@ -30,4 +30,4 @@ import Pattern from '../Pattern.astro';
       <AccentBlur />
     </div>
   </Container>
-</section>
+</Section>

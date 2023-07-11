@@ -1,13 +1,12 @@
 ---
-import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import Container from '../components/Container.astro';
 import HaveQuestionsCard from '../components/HaveQuestionsCard.astro';
 import Heading from '../components/Heading.astro';
+import Section from '../components/Section.astro';
 import Layout from '../layouts/Layout.astro';
 import config from '../utils/config';
-import styles from '../utils/styles';
 
 const services = await getCollection('additional-services');
 ---
@@ -16,7 +15,7 @@ const services = await getCollection('additional-services');
   title="Additional Services"
   description="You're looking for more than subscription-based web development services. Explore our additional services and let us help you make a digital impact."
 >
-  <section class={styles.section}>
+  <Section>
     <Container>
       <Breadcrumbs crumbs={[{ label: 'Services' }]} />
       <Heading
@@ -27,20 +26,10 @@ const services = await getCollection('additional-services');
       <div class="flex flex-wrap gap-4 mb-4">
         {
           services?.map((item) => (
-            <div class="card basis-[100%] lg:basis-[calc(33.3%-10.2px)] bg-base-100 border">
-              <div class="max-h-[250px] w-full">
-                <Image
-                  src={item?.data?.image}
-                  alt={item?.data?.imageAlt}
-                  quality={50}
-                  height={250}
-                  width={750}
-                  class="w-full h-full object-cover"
-                />
-              </div>
+            <div class="card basis-[100%] lg:basis-[calc(33.3%-10.2px)] bg-primary">
               <div class="card-body">
                 <h2 class="card-title">{item?.data?.title}</h2>
-                <h2 class="card-title text-primary">{item?.data?.price}</h2>
+                <h2 class="card-title underline">{item?.data?.price}</h2>
                 <p set:html={item?.body} />
                 <div class="card-actions justify-end">
                   <a
@@ -58,5 +47,5 @@ const services = await getCollection('additional-services');
       </div>
       <HaveQuestionsCard />
     </Container>
-  </section>
+  </Section>
 </Layout>

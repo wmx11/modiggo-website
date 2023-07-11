@@ -1,16 +1,17 @@
 ---
-import styles from '../../utils/styles';
 import Container from '../Container.astro';
 import Heading from '../Heading.astro';
+import Section from '../Section.astro';
 
 const faq = await Astro.glob('../../content/faq/*.md');
 const sortedFaq = faq
   .map((item) => ({ content: item, length: item?.frontmatter?.title?.length }))
   .sort((a, b) => a?.length - b?.length)
-  .map((sorted) => sorted?.content);
+  .map((sorted) => sorted?.content)
+  .filter((faq) => !faq.frontmatter.draft);
 ---
 
-<section class={styles.section} id="faq">
+<Section id="faq">
   <Container className="flex flex-col gap-2">
     <Heading
       title="Frequently Asked Questions"
@@ -19,12 +20,12 @@ const sortedFaq = faq
     <div>
       {
         sortedFaq?.map((item) => (
-          <div class="collapse collapse-arrow border-b border-black mb-2">
+          <div class="collapse collapse-arrow border-b hover:border-white border-zinc-500 transition-colors mb-2">
             <input type="radio" name="accordion" />
             <div class="collapse-title text-xl font-medium">
               {item.frontmatter.title}
             </div>
-            <div class="collapse-content prose prose-lg max-w-none">
+            <div class="collapse-content prose-invert prose-lg max-w-none">
               <p set:html={item.compiledContent()} />
             </div>
           </div>
@@ -32,4 +33,4 @@ const sortedFaq = faq
       }
     </div>
   </Container>
-</section>
+</Section>

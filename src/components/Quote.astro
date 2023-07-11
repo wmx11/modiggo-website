@@ -1,0 +1,13 @@
+---
+interface Props {
+  quote: string;
+  author: string;
+}
+
+const { quote, author } = Astro.props;
+---
+
+<div class="text-center space-y-4 z-10">
+  <p class="text-3xl">"{quote}"</p>
+  <p class="text-xl">- {author}</p>
+</div>
