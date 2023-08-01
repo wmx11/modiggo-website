@@ -3,24 +3,23 @@ import config from '../../../utils/config';
 import AccentBlur from '../../AccentBlur.astro';
 import Container from '../../Container.astro';
 import Heading from '../../Heading.astro';
-import Pattern from '../../Pattern.astro';
 import Section from '../../Section.astro';
 ---
 
 <Section className="bg-primary relative overflow-hidden">
   <Container>
     <Heading
-      className="text-center text-white relative z-10 mb-0"
+      position="center"
       title="You're Missing Out By Not Having a Website"
       subtitle="Without a professional website you're 75% less likely to succeed."
     >
       <a
         href={config.freeWebsiteApplicationLink}
         target="_blank"
-        class="btn btn-neutral btn-lg z-10 relative text-white">Apply now</a
+        class="btn btn-neutral btn-lg z-10 relative text-white"
+        >Apply for a free website</a
       >
     </Heading>
   </Container>
   <AccentBlur />
-  <Pattern />
 </Section>

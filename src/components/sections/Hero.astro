@@ -6,15 +6,12 @@ import HeroWrapper from '../HeroWrapper.astro';
 <section>
   <HeroWrapper>
     <Container className="text-white text-center z-10">
-      <div class="space-y-12">
+      <div class="space-y-8 max-w-4xl mx-auto">
         <h1
+          data-highlight={['digital blacksmith']}
           class="text-4xl sm:text-6xl md:text-8xl font-black animate uppercase"
         >
-          Your <span
-            class="digital--text digital--animated"
-            data-content="Digital">Digital</span
-          >
-          Blacksmith
+          We are your digital blacksmith
         </h1>
         <h2 class="text-2xl animate">
           Custom web development as subscription. Let's hammer out those red-hot
@@ -24,10 +21,9 @@ import HeroWrapper from '../HeroWrapper.astro';
           class="btn btn-primary btn-lg text-white animate"
           data-scroll-to="#partnership-plans"
         >
-          See Plans
+          See Partner Plans
         </button>
       </div>
     </Container>
-    <!-- <Pattern /> -->
   </HeroWrapper>
 </section>

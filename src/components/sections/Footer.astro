@@ -3,10 +3,11 @@ import { Icon } from 'astro-icon';
 import config from '../../utils/config';
 import Container from '../Container.astro';
 import LogoGroup from '../LogoGroup.astro';
-import Pattern from '../Pattern.astro';
 ---
 
-<footer class="p-10 text-white min-h-[420px] relative">
+<footer
+  class="p-10 text-white min-h-[420px] relative border-t border-t-primary/20"
+>
   <Container className="footer z-10 relative">
     <div class="space-y-4">
       <a href="/">
@@ -62,5 +63,4 @@ import Pattern from '../Pattern.astro';
       </a>
     </div>
   </Container>
-  <Pattern />
 </footer>

@@ -15,8 +15,8 @@ module.exports = {
   daisyui: {
     themes: [
       {
-        light: {
-          ...require('daisyui/src/theming/themes')['[data-theme=light]'],
+        synthwave: {
+          ...require('daisyui/src/theming/themes')['[data-theme=synthwave]'],
           primary: 'var(--primary)',
           secondary: 'var(--secondary)',
           accent: 'var(--tertiary)',
