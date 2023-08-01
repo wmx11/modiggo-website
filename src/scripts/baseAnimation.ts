@@ -10,7 +10,7 @@ inView(
         transform: ['translateY(-100px)', 'translateY(0px)'],
       },
       {
-        duration: 0.8,
+        duration: 0.7,
         delay: stagger(0.1),
       }
     );

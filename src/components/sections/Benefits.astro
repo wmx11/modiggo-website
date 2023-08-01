@@ -1,11 +1,11 @@
 ---
+import { Image } from 'astro:assets';
+import DomuFinancePage from '../../assets/images/domu-finance-page-sample.png';
 import Container from '../Container.astro';
 import Heading from '../Heading.astro';
-import QuoteCard from '../QuoteCard.astro';
 import Section from '../Section.astro';
+import TestimonialCard from '../TestimonialCard.astro';
 import TextBlock from '../TextBlock.astro';
-import DomuFinancePage from '../../assets/images/domu-finance-page-sample.png';
-import { Image } from 'astro:assets';
 
 const benefits = await Astro.glob('../../content/benefits/*.md');
 benefits.sort(
@@ -46,10 +46,13 @@ benefits.sort(
           </div>
         </div>
         <div class="flex-1 animate">
-          <div class="sticky top-10">
-            <QuoteCard
-              quote="Working with Modiggo was such a fantastic experience!"
-              author="Rene"
+          <div class="sticky top-10 grid md:grid-cols-2 gap-6">
+            <TestimonialCard
+              name="0xSlothETH"
+              description="Web3 Advisor 🌐 | Community Builder"
+              image="https://pbs.twimg.com/profile_images/1663944805133570055/HlJjuTal_400x400.jpg"
+              href="#"
+              testimonial="Working with Modiggo was such a fantastic experience!"
             />
           </div>
         </div>

@@ -8,21 +8,33 @@ import AccentBlur from '../AccentBlur.astro';
 import Heading from '../Heading.astro';
 import QuoteCard from '../QuoteCard.astro';
 import Section from '../Section.astro';
+import TestimonialCard from '../TestimonialCard.astro';
 ---
 
 <Section id="scope-of-work">
   <Container>
     <Heading
+      highlight={['digital solutions']}
       position="center"
       title="Our Manifesto"
       subtitle="Forging tailored digital solutions for your business. See how we can help you."
     />
     <div>
-      <QuoteCard
+      <div class="grid grid-cols-3 gap-6 max-w-5xl mb-16">
+        <TestimonialCard
+          name="0xSlothETH"
+          description="Web3 Advisor 🌐 | Community Builder"
+          image="https://pbs.twimg.com/profile_images/1663944805133570055/HlJjuTal_400x400.jpg"
+          href="#"
+          testimonial="It's safe to say that Modiggo work style is top-notch and they always managed to impress me with their dedication and ability to bring our projects to life. I couldn't have asked for a better partner to work with!"
+        />
+      </div>
+
+      <!-- <QuoteCard
         quote="It's safe to say that Modiggo work style is top-notch and they always managed to impress me with their dedication and ability to bring our projects to life. I couldn't have asked for a better partner to work with!"
         author="Rene"
         size="lg"
-      />
+      /> -->
       <div class="flex flex-col md:flex-row flex-wrap gap-8 md:gap-16">
         <div class="flex-1 animate">
           <h2 class="text-3xl font-bold mb-5">

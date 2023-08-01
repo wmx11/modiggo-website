@@ -66,8 +66,17 @@
 <div class="flex flex-wrap gap-4 mb-4 justify-between z-10 relative">
   {#each plans as item}
     <div
-      class="card bg-primary lg:min-w-[calc(360px)] lg:max-w-[calc(360px)] p-4"
+      class={`card bg-primary lg:min-w-[calc(360px)] lg:max-w-[480px] xl:max-w-[calc(360px)] p-4 ${
+        item.popular ? 'relative border-secondary border-2' : ''
+      }`}
     >
+      {#if item.popular}
+        <div
+          class="badge badge-lg badge-secondary text-white absolute top-[-14px] left-[-2px]"
+        >
+          Popular!
+        </div>
+      {/if}
       <div class="flex flex-col justify-between h-full">
         <div>
           <div class="mb-16 h-full max-h-[120px]">
