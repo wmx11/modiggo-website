@@ -47,7 +47,7 @@
   };
 </script>
 
-<div class="mb-4 flex z-10 relative">
+<div class="mb-4 flex z-10 relative justify-center">
   <div
     class="tabs tabs-boxed bg-primary lg:min-w-[calc(360px)] lg:max-w-[calc(360px)] justify-between"
   >

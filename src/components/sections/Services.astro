@@ -1,43 +1,19 @@
 ---
 import { Icon } from 'astro-icon';
-import { Image } from 'astro:assets';
-import ShopBackground from '../../assets/images/shop_background_3.jpeg';
-import AccentBlur from '../AccentBlur.astro';
 import Container from '../Container.astro';
-import Pattern from '../Pattern.astro';
-
 import * as whatWeDo from '../../content/services/what-we-do.md';
 import * as whatWeSolve from '../../content/services/what-we-solve.md';
 import * as whoWeAre from '../../content/services/who-we-are.md';
+import AccentBlur from '../AccentBlur.astro';
 import Heading from '../Heading.astro';
-import Section from '../Section.astro';
-import Quote from '../Quote.astro';
 import QuoteCard from '../QuoteCard.astro';
+import Section from '../Section.astro';
 ---
-
-<script>
-  import { scroll, inView } from 'motion';
-
-  const image = document?.querySelector('#shop-background') as HTMLBaseElement;
-
-  inView(
-    image,
-    () => {
-      scroll((info) => {
-        image.style.objectPosition = `center ${Math.round(
-          info.y.progress * 200
-        )}%`;
-      });
-    },
-    {
-      margin: '-50%',
-    }
-  );
-</script>
 
 <Section id="scope-of-work">
   <Container>
     <Heading
+      position="center"
       title="Our Manifesto"
       subtitle="Forging tailored digital solutions for your business. See how we can help you."
     />
@@ -54,7 +30,7 @@ import QuoteCard from '../QuoteCard.astro';
           </h2>
           <div class="text-lg mb-5" set:html={whatWeDo.compiledContent()} />
 
-          <div class="card bg-primary p-4">
+          <div class="card bg-primary p-4 relative overflow-hidden">
             <div class="md:columns-2 lg:columns-3">
               <ul class="space-y-4">
                 {
@@ -67,7 +43,7 @@ import QuoteCard from '../QuoteCard.astro';
                 }
               </ul>
             </div>
-            <Pattern />
+            <AccentBlur />
           </div>
         </div>
 
