@@ -74,7 +74,7 @@
         <div
           class="badge badge-lg badge-secondary text-white absolute top-[-14px] left-[-2px]"
         >
-          Popular!
+          Most Popular
         </div>
       {/if}
       <div class="flex flex-col justify-between h-full">

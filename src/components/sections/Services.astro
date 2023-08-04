@@ -9,6 +9,7 @@ import Heading from '../Heading.astro';
 import QuoteCard from '../QuoteCard.astro';
 import Section from '../Section.astro';
 import TestimonialCard from '../TestimonialCard.astro';
+import H1 from '../H1.astro';
 ---
 
 <Section id="scope-of-work">
@@ -20,29 +21,41 @@ import TestimonialCard from '../TestimonialCard.astro';
       subtitle="Forging tailored digital solutions for your business. See how we can help you."
     />
     <div>
-      <div class="grid grid-cols-3 gap-6 max-w-5xl mb-16">
-        <TestimonialCard
-          name="0xSlothETH"
-          description="Web3 Advisor 🌐 | Community Builder"
-          image="https://pbs.twimg.com/profile_images/1663944805133570055/HlJjuTal_400x400.jpg"
-          href="#"
-          testimonial="It's safe to say that Modiggo work style is top-notch and they always managed to impress me with their dedication and ability to bring our projects to life. I couldn't have asked for a better partner to work with!"
-        />
-      </div>
-
-      <!-- <QuoteCard
-        quote="It's safe to say that Modiggo work style is top-notch and they always managed to impress me with their dedication and ability to bring our projects to life. I couldn't have asked for a better partner to work with!"
-        author="Rene"
-        size="lg"
-      /> -->
-      <div class="flex flex-col md:flex-row flex-wrap gap-8 md:gap-16">
-        <div class="flex-1 animate">
-          <h2 class="text-3xl font-bold mb-5">
-            {whatWeDo?.frontmatter?.title}
-          </h2>
-          <div class="text-lg mb-5" set:html={whatWeDo.compiledContent()} />
-
-          <div class="card bg-primary p-4 relative overflow-hidden">
+      <div class="grid grid-cols-2 gap-6 mb-16">
+        <div class="grid grid-cols-2 gap-6">
+          <TestimonialCard
+            name="0xSlothETH"
+            description="Web3 Advisor 🌐 | Community Builder"
+            image="https://pbs.twimg.com/profile_images/1663944805133570055/HlJjuTal_400x400.jpg"
+            href="#"
+            testimonial="It's safe to say that Modiggo work style is top-notch and they always managed to impress me with their dedication and ability to bring our projects to life. I couldn't have asked for a better partner to work with!"
+          />
+          <TestimonialCard
+            name="0xSlothETH"
+            description="Web3 Advisor 🌐 | Community Builder"
+            image="https://pbs.twimg.com/profile_images/1663944805133570055/HlJjuTal_400x400.jpg"
+            href="#"
+            testimonial="It's safe to say that Modiggo work style is top-notch and they always managed to impress me with their dedication and ability to bring our projects to life. I couldn't have asked for a better partner to work with!"
+          />
+          <TestimonialCard
+            name="0xSlothETH"
+            description="Web3 Advisor 🌐 | Community Builder"
+            image="https://pbs.twimg.com/profile_images/1663944805133570055/HlJjuTal_400x400.jpg"
+            href="#"
+            testimonial="It's safe to say that Modiggo work style is top-notch and they always managed to impress me with their dedication and ability to bring our projects to life. I couldn't have asked for a better partner to work with!"
+          />
+          <TestimonialCard
+            name="0xSlothETH"
+            description="Web3 Advisor 🌐 | Community Builder"
+            image="https://pbs.twimg.com/profile_images/1663944805133570055/HlJjuTal_400x400.jpg"
+            href="#"
+            testimonial="It's safe to say that Modiggo work style is top-notch and they always managed to impress me with their dedication and ability to bring our projects to life. I couldn't have asked for a better partner to work with!"
+          />
+        </div>
+        <div>
+          <div
+            class="sticky top-10 card bg-primary p-4 overflow-hidden animate"
+          >
             <div class="md:columns-2 lg:columns-3">
               <ul class="space-y-4">
                 {
@@ -58,18 +71,35 @@ import TestimonialCard from '../TestimonialCard.astro';
             <AccentBlur />
           </div>
         </div>
+      </div>
 
-        <div class="flex-1 space-y-12">
-          <div class="animate">
-            <h2 class="text-3xl mb-5 font-bold">
-              {whoWeAre?.frontmatter?.title}
-            </h2>
+      <div class="space-y-32">
+        <div class="flex items-center justify-between gap-8">
+          <div class="flex-1 animate">
+            <H1 highlight={['What']} className="mb-8">
+              {whatWeDo?.frontmatter?.title}
+            </H1>
+          </div>
+
+          <div class="flex-1 animate">
+            <div class="text-lg mb-5" set:html={whatWeDo.compiledContent()} />
+          </div>
+        </div>
+
+        <div class="flex items-center justify-between gap-8">
+          <div class="flex-1 animate">
+            <H1 highlight={['Who']}>{whoWeAre?.frontmatter?.title}</H1>
+          </div>
+          <div class="flex-1 animate">
             <div class="text-lg mb-5" set:html={whoWeAre.compiledContent()} />
           </div>
-          <div class="animate">
-            <h2 class="text-3xl mb-5 font-bold">
-              {whatWeSolve?.frontmatter?.title}
-            </h2>
+        </div>
+
+        <div class="flex items-center justify-between gap-8">
+          <div class="flex-1 animate">
+            <H1 highlight={['What']}>{whatWeSolve?.frontmatter?.title}</H1>
+          </div>
+          <div class="flex-1 animate">
             <div
               class="text-lg mb-5"
               set:html={whatWeSolve.compiledContent()}
