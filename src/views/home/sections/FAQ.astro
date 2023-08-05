@@ -1,9 +1,9 @@
 ---
-import Container from '../Container.astro';
-import Heading from '../Heading.astro';
-import Section from '../Section.astro';
+import Container from '../../../components/Container.astro';
+import Heading from '../../../components/Heading.astro';
+import Section from '../../../components/Section.astro';
 
-const faq = await Astro.glob('../../content/faq/*.md');
+const faq = await Astro.glob('../../../content/faq/*.md');
 const sortedFaq = faq
   .map((item) => ({ content: item, length: item?.frontmatter?.title?.length }))
   .sort((a, b) => a?.length - b?.length)

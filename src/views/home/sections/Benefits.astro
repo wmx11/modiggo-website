@@ -1,13 +1,11 @@
 ---
-import { Image } from 'astro:assets';
-import DomuFinancePage from '../../assets/images/domu-finance-page-sample.png';
-import Container from '../Container.astro';
-import Heading from '../Heading.astro';
-import Section from '../Section.astro';
-import TestimonialCard from '../TestimonialCard.astro';
-import TextBlock from '../TextBlock.astro';
+import Container from '../../../components/Container.astro';
+import Heading from '../../../components/Heading.astro';
+import Section from '../../../components/Section.astro';
+import TestimonialCard from '../../../components/TestimonialCard.astro';
+import TextBlock from '../../../components/TextBlock.astro';
 
-const benefits = await Astro.glob('../../content/benefits/*.md');
+const benefits = await Astro.glob('../../../content/benefits/*.md');
 ---
 
 <Section className="min-h-screen relative">

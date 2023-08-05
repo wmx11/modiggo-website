@@ -1,13 +1,12 @@
 ---
-import Container from '../Container.astro';
-import HaveQuestionsCard from '../HaveQuestionsCard.astro';
-import Heading from '../Heading.astro';
-import Pattern from '../Pattern.astro';
-import Section from '../Section.astro';
-import PaymentPlans from '../svelte/PaymentPlans.svelte';
+import Container from '../../../components/Container.astro';
+import HaveQuestionsCard from '../../../components/HaveQuestionsCard.astro';
+import Heading from '../../../components/Heading.astro';
+import Section from '../../../components/Section.astro';
+import PaymentPlans from '../../../components/svelte/PaymentPlans.svelte';
 
 const paymentPlansContent = await Astro.glob(
-  '../../content/payment-plans/*.md'
+  '../../../content/payment-plans/*.md'
 );
 ---
 

@@ -1,12 +1,11 @@
 ---
-import AccentBlur from '../AccentBlur.astro';
-import Container from '../Container.astro';
-import Heading from '../Heading.astro';
-import Pattern from '../Pattern.astro';
-import Section from '../Section.astro';
-import TextBlock from '../TextBlock.astro';
+import AccentBlur from '../../../components/AccentBlur.astro';
+import Container from '../../../components/Container.astro';
+import Heading from '../../../components/Heading.astro';
+import Section from '../../../components/Section.astro';
+import TextBlock from '../../../components/TextBlock.astro';
 
-const benefits = await Astro.glob('../../content/main-benefits/*.md');
+const benefits = await Astro.glob('../../../content/main-benefits/*.md');
 benefits.sort(
   (a, b) => a.compiledContent().length - b.compiledContent().length
 );
@@ -33,5 +32,4 @@ benefits.sort(
     </div>
   </Container>
   <AccentBlur />
-  <!-- <Pattern /> -->
 </Section>

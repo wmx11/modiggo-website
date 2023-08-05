@@ -1,0 +1,29 @@
+---
+import Container from '../../../components/Container.astro';
+import HeroWrapper from '../../../components/HeroWrapper.astro';
+---
+
+<section>
+  <HeroWrapper>
+    <Container className="text-white text-center z-10">
+      <div class="space-y-8 max-w-4xl mx-auto">
+        <h1
+          data-highlight={['development', 'subscription']}
+          class="text-4xl sm:text-6xl md:text-7xl font-black animate uppercase"
+        >
+          Custom web development as a subscription
+        </h1>
+        <h2 class="text-2xl animate" data-highlight={['digital blacksmith']}>
+          We are your <strong>digital blacksmith</strong>. No more full-time
+          commitment. Let's hammer out those red-hot ideas.
+        </h2>
+        <button
+          class="btn btn-primary btn-lg text-white animate"
+          data-scroll-to="#partnership-plans"
+        >
+          See partnership plans
+        </button>
+      </div>
+    </Container>
+  </HeroWrapper>
+</section>
