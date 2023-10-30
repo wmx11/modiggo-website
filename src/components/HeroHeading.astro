@@ -1,4 +1,6 @@
 ---
+import H1 from './H1.astro';
+import H2 from './H2.astro';
 interface Props {
   title?: string;
   subtitle?: string;
@@ -7,9 +9,12 @@ interface Props {
 const { title, subtitle } = Astro.props;
 ---
 
-<h1 class="mb-5 text-5xl sm:text-6xl md:text-8xl font-black animate">
-  {title}
-</h1>
-<h2 class="mb-5 text-2xl animate">
-  {subtitle}
-</h2>
+<div class="space-y-8">
+  <H1>
+    {title}
+  </H1>
+  <H2>
+    {subtitle}
+  </H2>
+  <slot />
+</div>

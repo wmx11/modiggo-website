@@ -1,19 +1,32 @@
 ---
-import Container from '../Container.astro';
-import Pattern from '../Pattern.astro';
-import { Image } from 'astro:assets';
-import ModiggoLogo from '../../assets/images/modiggo_logo.png';
 import { Icon } from 'astro-icon';
+import config from '../../utils/config';
+import Container from '../Container.astro';
+import LogoGroup from '../LogoGroup.astro';
 ---
 
-<footer class="p-10 bg-black text-white min-h-[420px] relative">
+<footer
+  class="p-10 text-white min-h-[420px] relative border-t border-t-primary/20"
+>
   <Container className="footer z-10 relative">
-    <div>
-      <a href="/" class="flex items-center gap-4 mb-2">
-        <Image src={ModiggoLogo} alt="Modiggo Logo" height={50} width={50} />
-        <span class="text-3xl font-bold">Modiggo</span>
+    <div class="space-y-4">
+      <a href="/">
+        <LogoGroup />
       </a>
+      <div>
+        <span class="block footer-title">Email</span>
+        <a class="link link-hover" href={`mailto:${config.email}`}
+          >{config.email}</a
+        >
+      </div>
+      <div>
+        <span class="block footer-title">Phone</span>
+        <a class="link link-hover" href={`tel:${config.phone}`}
+          >{config.phone}</a
+        >
+      </div>
     </div>
+
     <div>
       <span class="footer-title">Company</span>
       <a class="link link-hover" href="/free-websites">Free websites</a>
@@ -30,12 +43,14 @@ import { Icon } from 'astro-icon';
         >Partnereship Plans</button
       >
     </div>
+
     <div>
       <span class="footer-title">Legal</span>
       <a class="link link-hover" href="/cookie-policy">Cookie policy</a>
       <a class="link link-hover" href="/privacy-policy">Privacy policy</a>
       <a class="link link-hover" href="/terms-of-services">Terms of services</a>
     </div>
+
     <div>
       <span class="footer-title block">Social Media</span>
       <a
@@ -48,5 +63,4 @@ import { Icon } from 'astro-icon';
       </a>
     </div>
   </Container>
-  <Pattern />
 </footer>

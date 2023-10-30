@@ -3,13 +3,13 @@ import LargeCard from './LargeCard.astro';
 import config from '../utils/config';
 ---
 
-<LargeCard>
-  <h2 class="card-title text-5xl mb-5 font-bold">Have questions?</h2>
-  <p class="mb-5">
+<LargeCard className="text-center">
+  <h2 class="text-5xl font-bold">Have questions?</h2>
+  <p class="text-lg">
     Learn more about Modiggo. Get a short tour through our digital blacksmith
     shop and see how we can help you.
   </p>
-  <div class="card-actions">
+  <div>
     <a
       href={config.calendarLink}
       target="_blank"

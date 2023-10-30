@@ -1,89 +1,60 @@
 ---
-import { Image } from 'astro:assets';
 import { Icon } from 'astro-icon';
-import ShopBackground from '../../assets/images/shop_background_3.jpeg';
-import styles from '../../utils/styles';
-import AccentBlur from '../AccentBlur.astro';
 import Container from '../Container.astro';
-import Pattern from '../Pattern.astro';
-
 import * as whatWeDo from '../../content/services/what-we-do.md';
 import * as whatWeSolve from '../../content/services/what-we-solve.md';
 import * as whoWeAre from '../../content/services/who-we-are.md';
+import AccentBlur from '../AccentBlur.astro';
 import Heading from '../Heading.astro';
+import QuoteCard from '../QuoteCard.astro';
+import Section from '../Section.astro';
 ---
 
-<script>
-  import { scroll, inView } from 'motion';
-
-  const image = document?.querySelector('#shop-background') as HTMLBaseElement;
-
-  inView(
-    image,
-    () => {
-      scroll((info) => {
-        image.style.objectPosition = `center ${Math.round(
-          info.y.progress * 200
-        )}%`;
-      });
-    },
-    {
-      margin: '-50%',
-    }
-  );
-</script>
-
-<section class={styles.section} id="scope-of-work">
+<Section id="scope-of-work">
   <Container>
     <Heading
+      position="center"
       title="Our Manifesto"
-      subtitle="Forging digital equipment for your business. See how we can help you."
+      subtitle="Forging tailored digital solutions for your business. See how we can help you."
     />
     <div>
-      <div
-        class="card h-[320px] mb-16 bg-red-200 relative overflow-hidden z-[-1]"
-      >
-        <Image
-          src={ShopBackground}
-          alt="Modiggo blacksmith shop background image"
-          class="absolute inset-0 duration-[1s] ease-in-out w-full h-full object-cover object-center"
-          id="shop-background"
-          quality={50}
-          height={1080}
-          width={1600}
-        />
-        <Pattern />
-        <AccentBlur />
-      </div>
+      <QuoteCard
+        quote="It's safe to say that Modiggo work style is top-notch and they always managed to impress me with their dedication and ability to bring our projects to life. I couldn't have asked for a better partner to work with!"
+        author="Rene"
+        size="lg"
+      />
       <div class="flex flex-col md:flex-row flex-wrap gap-8 md:gap-16">
         <div class="flex-1 animate">
-          <h2 class="text-3xl mb-5 font-bold">
+          <h2 class="text-3xl font-bold mb-5">
             {whatWeDo?.frontmatter?.title}
           </h2>
-          <div class="mb-5">
-            <div class="text-lg mb-5" set:html={whatWeDo.compiledContent()} />
-          </div>
-          <div class="md:columns-2 lg:columns-3">
-            <ul class="[&>li]:mb-4">
-              {
-                whatWeDo?.frontmatter?.services?.map((item: string) => (
-                  <li class="flex gap-2 items-center">
-                    <Icon name="gg:check-o" class="w-[16px] text-primary" />
-                    <div set:html={item} />
-                  </li>
-                ))
-              }
-            </ul>
+          <div class="text-lg mb-5" set:html={whatWeDo.compiledContent()} />
+
+          <div class="card bg-primary p-4 relative overflow-hidden">
+            <div class="md:columns-2 lg:columns-3">
+              <ul class="space-y-4">
+                {
+                  whatWeDo?.frontmatter?.services?.map((item: string) => (
+                    <li class="flex gap-2 items-center z-10 relative">
+                      <Icon name="gg:check-o" class="w-[16px] text-white" />
+                      <div set:html={item} />
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
+            <AccentBlur />
           </div>
         </div>
-        <div class="flex-1">
-          <div class="mb-8 animate">
+
+        <div class="flex-1 space-y-12">
+          <div class="animate">
             <h2 class="text-3xl mb-5 font-bold">
               {whoWeAre?.frontmatter?.title}
             </h2>
             <div class="text-lg mb-5" set:html={whoWeAre.compiledContent()} />
           </div>
-          <div class="mb-8 animate">
+          <div class="animate">
             <h2 class="text-3xl mb-5 font-bold">
               {whatWeSolve?.frontmatter?.title}
             </h2>
@@ -96,4 +67,4 @@ import Heading from '../Heading.astro';
       </div>
     </div>
   </Container>
-</section>
+</Section>

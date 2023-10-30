@@ -1,6 +1,6 @@
 ---
 iconName: mdi:heart
-iconClassName: max-w-[35px] w-full
+iconClassName: max-w-[30px] w-full
 title: Support & Refinement
 ---
 

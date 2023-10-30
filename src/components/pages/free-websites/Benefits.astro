@@ -1,16 +1,17 @@
 ---
 import { Image } from 'astro:assets';
 import WebsiteImage from '../../../assets/images/website.png';
-import styles from '../../../utils/styles';
 import Container from '../../Container.astro';
 import Heading from '../../Heading.astro';
+import Section from '../../Section.astro';
 
 import * as BenefitsContent from '../../../content/free-websites/benefits.md';
 ---
 
-<section class={styles.section}>
+<Section>
   <Container>
     <Heading
+      position="center"
       title="A Well-Crafted Website"
       subtitle="Fast, trustworthy, SEO-optimized, mobile-friendly, and great-converting."
     />
@@ -31,4 +32,4 @@ import * as BenefitsContent from '../../../content/free-websites/benefits.md';
       </div>
     </div>
   </Container>
-</section>
+</Section>

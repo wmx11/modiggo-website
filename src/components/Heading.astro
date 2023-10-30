@@ -1,18 +1,41 @@
 ---
+import { cva } from 'class-variance-authority';
 import { twMerge } from 'tailwind-merge';
+import H1 from './H1.astro';
+import H2 from './H2.astro';
+import type { Position } from '../../types';
 
 interface Props {
   title?: string;
   subtitle?: string;
   className?: string;
+  highlight?: string[];
+  position?: Position;
 }
 
-const { title, subtitle, className } = Astro.props;
+const {
+  title,
+  subtitle,
+  className,
+  highlight,
+  position = 'left',
+} = Astro.props;
+
+const heading = cva(twMerge('mb-16 space-y-6 max-w-3xl', className), {
+  variants: {
+    position: {
+      left: 'text-left',
+      center: 'mx-auto text-center',
+      right: 'text-right',
+      top: '',
+      bottom: '',
+    },
+  },
+});
 ---
 
-<div class={twMerge('text-black mb-16 animate', className)}>
-  <h1 class="text-5xl font-bold mb-5">{title}</h1>
-  <h2 class="mb-5 text-2xl">
-    {subtitle}
-  </h2>
+<div class={heading({ position })}>
+  <H1 highlight={highlight} className="animate">{title}</H1>
+  <H2 highlight={highlight} className="animate">{subtitle}</H2>
+  <slot />
 </div>

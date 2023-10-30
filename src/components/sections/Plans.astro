@@ -1,8 +1,9 @@
 ---
-import styles from '../../utils/styles';
 import Container from '../Container.astro';
 import HaveQuestionsCard from '../HaveQuestionsCard.astro';
 import Heading from '../Heading.astro';
+import Pattern from '../Pattern.astro';
+import Section from '../Section.astro';
 import PaymentPlans from '../svelte/PaymentPlans.svelte';
 
 const paymentPlansContent = await Astro.glob(
@@ -10,13 +11,14 @@ const paymentPlansContent = await Astro.glob(
 );
 ---
 
-<section class={styles.section} id="partnership-plans">
+<Section className="relative" id="partnership-plans">
   <Container>
     <Heading
+      position="center"
       title="Partnership Plans"
       subtitle="Choose the right plan for you. Pause or cancel anytime based on your workload."
     />
     <PaymentPlans client:visible paymentPlansContent={paymentPlansContent} />
     <HaveQuestionsCard />
   </Container>
-</section>
+</Section>
